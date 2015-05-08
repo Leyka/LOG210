@@ -11,3 +11,10 @@ Alors venez nous dire bonjour à Jordan sur [Appear.in](https://appear.in/log210
 
 ## Contact
 [Antoine Grenier](mailto:antoine.grenier.1@ens.etsmtl.ca)
+
+## Liens utiles
+
+* [Meteor tuto beginner](https://www.meteor.com/install)
+* [Lucid chart](https://www.lucidchart.com/pages/education/university) (pour les diagrammes)
+
+
