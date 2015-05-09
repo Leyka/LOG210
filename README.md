@@ -16,6 +16,4 @@ Alors venez nous dire bonjour à Jordan sur [Appear.in](https://appear.in/log210
 
 * [Meteor tuto beginner](https://www.meteor.com/install)
 * [Lucid chart](https://www.lucidchart.com/pages/education/university) (pour les diagrammes)
-  * Inscrivez-vous avec votre adresse courriel Gmail de l'ETS (@etsmtl.net)
-
-
+* Inscrivez-vous avec votre adresse courriel Gmail de l'ETS (@etsmtl.net)
