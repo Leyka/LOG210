@@ -18,3 +18,4 @@ Alors venez nous dire bonjour à Jordan sur [Appear.in](https://appear.in/log210
 * [Lucid chart](https://www.lucidchart.com/pages/education/university) (pour les diagrammes)
 * Inscrivez-vous avec votre adresse courriel Gmail de l'ETS (@etsmtl.net)
 * [Discover Meteor book](http://web.mit.edu/~deberg/Public/Discover-Meteor.pdf)
+* ya
