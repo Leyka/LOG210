@@ -1,0 +1,10 @@
+{
+  "FullNameLabel": "Full Name",
+  "BirthdayLabel": "Birthday",
+  "AddressLabel": "Address",
+  "PhoneNumberLabel": "Phone Number",
+  "EmailAddressLabel": "Email",
+  "PasswordLabel": "Password",
+  "ProfileHeading": "Profile",
+  "SecurityHeading": "Security"
+}

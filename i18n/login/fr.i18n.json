@@ -1,0 +1,10 @@
+{
+  "FullNameLabel": "Nom Complet",
+  "BirthdayLabel": "Date de naissance",
+  "AddressLabel": "Addresse",
+  "PhoneNumberLabel": "Numéro de téléphone",
+  "EmailAddressLabel": "Courriel",
+  "PasswordLabel": "Mot de passe",
+  "ProfileHeading": "Profil",
+  "SecurityHeading": "Sécurité"
+}

@@ -15,7 +15,9 @@ audit-argument-checks
 fastclick
 manuelschoebel:ms-seo
 browser-policy
-twbs:bootstrap-noglyph
 fortawesome:fontawesome
 tap:i18n
 reactive-var
+useraccounts:bootstrap
+aldeed:autoform
+twbs:bootstrap
