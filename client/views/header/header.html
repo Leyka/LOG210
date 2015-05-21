@@ -14,8 +14,6 @@
             <!-- /.navbar-header -->
             <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
                 <ul class="nav navbar-nav">
-                    <li><a href="/editAccount">{{_ "EditAccount"}}</a></li>
-                    <!-- /.dropdown -->
                     <li>
                         <select class="form-control" id="languageSelect">
                             {{# each languages}}
@@ -23,10 +21,20 @@
                             {{/each}}
                         </select>
                     </li>
+                    <li>
+                        <div class="dropdown" style="float:right">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                {{userName}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/editAccount">{{_ "EditAccount"}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" data-action="SignOut">{{_ "SignOut"}}</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
-                <!-- /.nav navbar-nav-->
-                <a class="btn btn-danger pull-right" data-action="SignOut">{{_ "SignOut"}}
-                </a>
+
             </div>
             <!--/.nav-collapse -->
         </div>

@@ -4,6 +4,10 @@ Template.header.helpers({
             {id: "en", value: "English", selected: GetUserLanguage() == "en" ? "selected" : ""},
             {id: "fr", value: "Français", selected: GetUserLanguage() == "fr" ? "selected" : ""}
         ]
+    },
+
+    userName: function () {
+        return Meteor.user().profile.fullName;
     }
 });
 
