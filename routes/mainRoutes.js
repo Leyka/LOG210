@@ -3,6 +3,7 @@
  */
 Router.route('/', {
     name: 'home',
+    data: {user:function(){return Meteor.user()}},
     action: function () {
         this.render('home');
         SEO.set({title: 'Home - ' + TAPi18n.__("AppName")});
