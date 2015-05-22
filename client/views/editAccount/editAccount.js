@@ -13,3 +13,4 @@ Template.editAccount.events({
             'Numéro de téléphone: ' + doc.profile.phoneNumber);
     }
 });
+
