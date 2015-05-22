@@ -1,9 +1,11 @@
 # LOG210-Lab01
 
 ## Remise 
-* Plan Itération I : 15 mai, 13h30
-* Rapport I : 15 mai, 23h55
-* Demo : 22 mai, 13h30 
+
+### Itération 2 
+* Plan Itération II : 5 juin, 8h30
+* Rapport II : 5 juin, 23h55
+* Demo : 12 juin, 9h00 
 
 ## Chat 
 Vous vous sentez seul(e) ? Vous voulez un peu de compagnie? <br/>
