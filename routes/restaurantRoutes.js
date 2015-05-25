@@ -2,8 +2,14 @@
 Router.route('/restaurants', {
 
     name: 'restaurants',
-    data: {restaurants: function(){return Restaurant.find();}},
-    waitOn: function(){return Meteor.subscribe("restaurants");},
+    waitOn: function(){
+        return Meteor.subscribe("restaurants");
+    },
+    data: {
+        restaurants: function(){
+            return Restaurant.find();
+        }
+    },
     action: function(){
         this.render('restaurants'); // Template name
         SEO.set({title: "Restaurants"});

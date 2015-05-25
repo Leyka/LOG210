@@ -1,7 +1,7 @@
 Meteor.methods({
         editAccount: function (doc) {
             check(doc, Match.Any);
-            var userId = Meteor.userId()
+            var userId = Meteor.userId();
             if (doc.services != null) {
                 Accounts.setPassword(userId, doc.services.password);
             }
