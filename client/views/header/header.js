@@ -1,11 +1,13 @@
 Template.header.helpers({
     languages: function () {
         return [
-            {id: "en", value: "English", selected: GetUserLanguage() == "en" ? "selected" : ""},
-            {id: "fr", value: "Français", selected: GetUserLanguage() == "fr" ? "selected" : ""}
+            {id: "en", value: "English", active: GetUserLanguage() == "en" ? "active" : ""},
+            {id: "fr", value: "Français", active: GetUserLanguage() == "fr" ? "active" : ""}
         ]
     },
-
+    currentLanguage: function(){
+        return GetUserLanguage() == "en" ? "English" : "Français";
+    },
     userName: function () {
         return Meteor.user().profile.fullName;
     }
@@ -16,8 +18,8 @@ Template.header.events({
         Meteor.logout();
         Router.go('/');
     },
-    'change #languageSelect': function (event) {
-        SetUserLanguage(event.target.selectedOptions[0].id);
+    'click .languageSelect': function (event) {
+        SetUserLanguage(event.target.id);
     }
 });
 

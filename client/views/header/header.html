@@ -1,44 +1,80 @@
 <template name="header">
-    <nav class="navbar navbar-inverse">
+    <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">{{_ "ToggleNavigationText"}}</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-toggle"></span>
                 </button>
                 <a class="navbar-brand" href="/">{{_ "AppName"}}</a>
             </div>
-            <!-- /.navbar-header -->
-            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <select class="form-control" id="languageSelect">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- langues -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
+                            {{currentLanguage}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+
                             {{# each languages}}
-                                <option id="{{id}}" {{selected}}>{{value}}</option>
+                            <li class="{{active}}" role="presentation">
+                                <a id="{{id}}" role="menuitem" href="#" class="languageSelect">{{value}}</a>
+                            </li>
                             {{/each}}
-                        </select>
+                        </ul>
                     </li>
-                    <li>
-                        <div class="dropdown" style="float:right">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                {{userName}}
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/editAccount">{{_ "EditAccount"}}</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" data-action="SignOut">{{_ "SignOut"}}</a></li>
-                            </ul>
-                        </div>
+                    <!-- profile -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
+                            <i class="glyphicon glyphicon-user"></i> {{userName}} <span class="caret"></span></a>
+                        <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/editAccount">{{_ "EditAccount"}}</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" data-action="SignOut">{{_ "SignOut"}}</a></li>
+                        </ul>
                     </li>
                 </ul>
-
             </div>
-            <!--/.nav-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    <!-- /.navbar navbar-inverse -->
+        </div><!-- /container -->
+    </div>
+    <!--<nav class="navbar navbar-inverse">-->
+        <!--<div class="container">-->
+            <!--<div class="navbar-header">-->
+                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"-->
+                        <!--aria-expanded="false" aria-controls="navbar">-->
+                    <!--<span class="sr-only">{{_ "ToggleNavigationText"}}</span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                <!--</button>-->
+                <!--<a class="navbar-brand" href="/">{{_ "AppName"}}</a>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; /.navbar-header &ndash;&gt;-->
+            <!--<div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">-->
+                <!--<ul class="nav navbar-nav">-->
+                    <!--<li>-->
+                        <!--<select class="form-control" id="languageSelect">-->
+                            <!--{{# each languages}}-->
+                                <!--<option id="{{id}}" {{selected}}>{{value}}</option>-->
+                            <!--{{/each}}-->
+                        <!--</select>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="dropdown" style="float:right">-->
+                            <!--<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">-->
+                                <!--{{userName}}-->
+                                <!--<span class="caret"></span>-->
+                            <!--</button>-->
+                            <!--<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">-->
+                                <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="/editAccount">{{_ "EditAccount"}}</a></li>-->
+                                <!--<li role="presentation"><a role="menuitem" tabindex="-1" data-action="SignOut">{{_ "SignOut"}}</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+
+            <!--</div>-->
+            <!--&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /.container &ndash;&gt;-->
+    <!--</nav>-->
+    <!--&lt;!&ndash; /.navbar navbar-inverse &ndash;&gt;-->
 </template>

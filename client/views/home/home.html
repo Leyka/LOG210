@@ -1,4 +1,8 @@
 <template name="home">
+    {{#contentFor region="title"}}
+        {{_ "AppName"}}
+    {{/contentFor}}
+
     {{#with user}}
     <div class="jumbotron">
         <h1>{{_ "WelcomeTextTitle"}} {{userName}} !</h1>

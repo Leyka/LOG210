@@ -1,9 +1,8 @@
 <template name="editAccount">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">{{_ "EditAccount"}}</h3>
-        </div>
-        <div class="panel-body">
+    {{#contentFor region="title"}}
+        {{_ "EditAccount"}}
+    {{/contentFor}}
+
             {{#autoForm schema="Schema.User" doc=user id="editAccountForm" type="method" meteormethod="editAccount"}}
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -22,14 +21,12 @@
                         {{_ "SecurityHeading"}}
                     </div>
                     <div class="panel-body">
-                        {{> afQuickField name="services.password"}}
+                        {{> afQuickField name="services.password" type="password"}}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <button class="btn btn-primary" type="submit" data-action=EditAccount>{{_ "SubmitButton"}}</button>
+                    <button class="btn btn-success col-sm-2" type="submit" data-action=EditAccount>{{_ "Submit"}}</button>
                 </div>
             {{/autoForm}}
-        </div>
-    </div>
 </template>

@@ -4,6 +4,24 @@
     </header>
 
     <main class="container">
-        {{> yield}}
+
+        <div class="row">
+            <div class="col-sm-3">
+                <!-- left -->
+                <h3><i class="glyphicon glyphicon-briefcase"></i> {{_ "ToolboxTitle"}} </h3>
+                <hr>
+                <ul class="nav nav-stacked">
+                    <li><a href="/restaurants">Restaurants</a></li>
+                </ul>
+                <hr>
+            </div>
+            <div class="col-sm-9">
+                <h3>{{>yield "title" }}</h3>
+                <hr/>
+
+                {{> yield}}
+            </div>
+
+        </div>
     </main>
 </template>

@@ -1,3 +1,6 @@
 {
-  "AppName": "Système de gestion des livraisons"
+  "AppName": "Système de gestion des livraisons",
+  "ToolboxTitle": "Gestion",
+
+  "Submit": "Envoyer"
 }
