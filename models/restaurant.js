@@ -1,4 +1,4 @@
-Restaurants = new Mongo.Collection('restaurant');
+Restaurants = new Mongo.Collection('restaurants');
 
 Restaurants.attachSchema(
 

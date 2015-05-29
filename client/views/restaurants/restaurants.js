@@ -1,6 +1,6 @@
 Template.restaurants.helpers({
     restaurants: function(){
-        return Restaurant.find();
+        return Restaurants.find();
     }
 });
 
