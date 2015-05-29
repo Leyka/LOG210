@@ -1,8 +1,18 @@
 <template name="restaurants">
-    <h3>{{_ "RestaurantTitleHome"}}</h3>
-    <ul>
+    <h1 style="color: black">Restaurants</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+            </tr>
+        </thead>
+        <tbody>
         {{#each restaurants}}
-            <li>{{name}}</li>
+                <tr>
+                    <td>{{name}}</td>
+                </tr>
         {{/each}}
-    </ul>
-</template> 
+        </tbody>
+
+    </table>
+</template>
