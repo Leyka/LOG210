@@ -7,7 +7,7 @@ Router.route('/restaurants', {
     },
     data: {
         restaurants: function(){
-            return Restaurant.find();
+            return Restaurants.find();
         }
     },
     action: function(){

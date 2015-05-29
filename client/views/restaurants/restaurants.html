@@ -1,5 +1,8 @@
 <template name="restaurants">
-<h1>
-    Hello!
-</h1>
+    <h3>{{_ "RestaurantTitleHome"}}</h3>
+    <ul>
+        {{#each restaurants}}
+            <li>{{name}}</li>
+        {{/each}}
+    </ul>
 </template> 

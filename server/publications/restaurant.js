@@ -5,5 +5,5 @@
  */
 
 Meteor.publish("restaurants", function(){
-    return Restaurant.find();
+    return Restaurants.find();
 });

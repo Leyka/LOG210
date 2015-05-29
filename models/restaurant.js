@@ -1,6 +1,7 @@
-Restaurant = new Mongo.Collection('restaurant');
+Restaurants = new Mongo.Collection('restaurant');
 
-Restaurant.attachSchema(
+Restaurants.attachSchema(
+
     new SimpleSchema({
 
         name: {
