@@ -24,6 +24,9 @@ Schema.UserProfile = new SimpleSchema({
         label: function () {
             return TAPi18n.__("PhoneNumberLabel");
         }
+    },
+    UserType:{
+        type: ['Contractor', 'Visitor', 'Client', 'Restaurateur']
     }
 });
 
