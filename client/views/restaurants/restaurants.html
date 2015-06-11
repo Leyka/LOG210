@@ -2,20 +2,24 @@
     {{#contentFor region="title"}}
         Restaurants
         <div class="pull-right">
-            <a class="btn btn-success" href="/restaurants/add"><i class="fa fa-plus"></i> &nbsp; Add restaurant</a>
-        </div>
+        <a class="btn btn-success" href="/restaurants/add"><i class="fa fa-plus"></i> {{_ "NewRestaurantTitle"}}</a>
+    </div>
     {{/contentFor}}
 
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Nom</th>
+                <th>Address</th>
+                <th>Restaurateur</th>
             </tr>
         </thead>
         <tbody>
         {{#each restaurants}}
                 <tr>
                     <td>{{name}}</td>
+                    <td>{{address}}</td>
+                    <td></td>
                 </tr>
         {{/each}}
         </tbody>

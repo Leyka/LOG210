@@ -2,9 +2,12 @@
 
     {{#contentFor region="title"}}
         {{_ "RestaurateurTitle"}}
+        <div class="pull-right">
+            <a class="btn btn-success" href="/addRestaurateurs"><i class="fa fa-plus"></i> {{_ "AddRestaurateurTitle"}}</a>
+        </div>
     {{/contentFor}}
 
-    <a class="btn btn-primary" href="/addRestaurateurs">{{_ "AddRestaurateurTitle"}}</a>
+
 
     <table class="table table-striped">
         <thead>
