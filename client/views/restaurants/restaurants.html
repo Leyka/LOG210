@@ -12,6 +12,7 @@
                 <th>Nom</th>
                 <th>Address</th>
                 <th>Restaurateur</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,10 @@
                     <td>{{name}}</td>
                     <td>{{address}}</td>
                     <td></td>
+                    <td>
+                        <a class="btn btn-primary" href="#">{{_ "ModifyButtonLabel"}}</a>
+                        <a class="btn btn-danger">{{_ "DeleteButtonLabel"}}</a>
+                    </td>
                 </tr>
         {{/each}}
         </tbody>
