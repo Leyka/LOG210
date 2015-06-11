@@ -1,4 +1,7 @@
 {
   "RestaurantNameLabel": "Nom",
-  "RestaurantTitleHome": "Liste de tous vos restaurants"
+  "RestaurantAddressLabel": "Adresse",
+  "RestaurantRestaurateurLabel": "Restaurateur",
+  "RestaurantTitleHome": "Liste de tous vos restaurants",
+  "NewRestaurantTitle": "Ajouter un restaurant"
 }

@@ -1,24 +1,9 @@
 <template name="restaurants">
-    <h1 style="color: black">Restaurants</h1>
-    {{#autoForm collection="Restaurants" id="addRestaurantForm" type="insert"}}
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                {{> afQuickField name="name"}}
-                <select class="input-xlarge country" id="country" name="country">
-                    {{#each restaurateurs}}
-                        <option value="{{_id}}" data-id={{profile}}> {{profile.fullName}} </option>
-                    {{/each}}
-                </select>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <button class="btn btn-primary" type="submit" data-action=AddRestaurant>{{_ "Add a restaurant"}}</button>
-        </div>
-    {{/autoForm}}
-
     {{#contentFor region="title"}}
-        Restaurant
+        Restaurants
+        <div class="pull-right">
+            <a class="btn btn-success" href="/restaurants/add"><i class="fa fa-plus"></i> &nbsp; Add restaurant</a>
+        </div>
     {{/contentFor}}
 
     <table class="table table-striped">
@@ -34,6 +19,5 @@
                 </tr>
         {{/each}}
         </tbody>
-
     </table>
 </template>

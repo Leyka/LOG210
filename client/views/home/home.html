@@ -4,7 +4,6 @@
     {{/contentFor}}
 
     {{#with user}}
-    <div class="jumbotron">
         <h1>{{_ "WelcomeTextTitle"}} {{userName}} !</h1>
         <ul>
             <li>{{_ "EmailAddressLabel"}} : {{emails.[0].address}}</li>
@@ -14,6 +13,5 @@
             <li>{{_ "PhoneNumberLabel"}} : {{profile.phoneNumber}}</li>
         </ul>
         <p>{{_ "WelcomeText"}}</p>
-    </div>
     {{/with}}
 </template>

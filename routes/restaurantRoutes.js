@@ -11,3 +11,12 @@ Router.route('/restaurants', {
     }
 });
 
+Router.route('/restaurants/add', {
+
+    name: 'newRestaurant',
+    action: function(){
+        this.render('addRestaurantForm');
+        SEO.set({title: TAPi18n.__("NewRestaurantTitle")});
+    }
+});
+

@@ -1,0 +1,22 @@
+<template name="addRestaurantForm">
+    {{#contentFor region="title"}}
+        {{_ "NewRestaurantTitle" }}
+    {{/contentFor}}
+
+    {{#autoForm collection="Restaurants" id="addRestaurantForm" type="insert"}}
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                {{> afQuickField name="name"}}
+                <select class="input-xlarge country" id="country" name="country">
+                    {{#each restaurateurs}}
+                        <option value="{{_id}}" data-id={{profile}}> {{profile.fullName}} </option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" data-action=AddRestaurant>{{_ "Add a restaurant"}}</button>
+        </div>
+    {{/autoForm}}
+</template>
