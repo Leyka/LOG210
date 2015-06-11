@@ -2,5 +2,10 @@
   "AppName": "Delivery Management System",
   "ToolboxTitle": "Toolbox",
   "Submit": "Submit",
-  "HomeLink": "Home"
+  "HomeLink": "Home",
+  "SubmitButtonLabel": "Submit",
+  "ModifyButtonLabel": "Modify",
+  "DeleteButtonLabel": "Delete",
+  "RestaurateursSideMenuText": "Restaurateurs",
+  "RestaurantsSideMenuText": "Restaurants"
 }

@@ -2,5 +2,10 @@
   "AppName": "Système de gestion des livraisons",
   "ToolboxTitle": "Gestion",
   "Submit": "Envoyer",
-  "HomeLink": "Accueil"
+  "HomeLink": "Accueil",
+  "SubmitButtonLabel": "Envoyer",
+  "ModifyButtonLabel": "Modifier",
+  "DeleteButtonLabel": "Supprimer",
+  "RestaurateursSideMenuText": "Restaurateurs",
+  "RestaurantsSideMenuText": "Restaurants"
 }

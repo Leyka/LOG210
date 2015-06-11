@@ -1,0 +1,11 @@
+{
+  "NoRestaurantAssignedText": "Il n'y a pas de restaurant assigné au restaurateur.",
+  "RestaurantLabel": "Restaurant",
+  "SelectARestaurantLabel": "Sélectionnez un restaurant",
+  "AddRestaurateurTitle": "Ajouter un restaurateur",
+  "ModifyRestaurateurTitle": "Modifier un restaurateur",
+  "RestaurateurTitle": "Restaurateurs",
+  "NameTableHeader": "Nom",
+  "RestaurantTableHeader": "Restaurant",
+  "OptionsTableHeader": "Options"
+}

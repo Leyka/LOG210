@@ -1,0 +1,6 @@
+user_entrepreneur:
+  email: entrepreneur@site.com
+  password: password
+  roles: [entrepreneur]
+  profile:
+    fullName: Entrepreneur

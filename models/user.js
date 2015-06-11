@@ -24,9 +24,6 @@ Schema.UserProfile = new SimpleSchema({
         label: function () {
             return TAPi18n.__("PhoneNumberLabel");
         }
-    },
-    UserType:{
-        type: ['Contractor', 'Visitor', 'Client', 'Restaurateur']
     }
 });
 
@@ -64,6 +61,12 @@ Schema.User = new SimpleSchema({
         label: function () {
             return TAPi18n.__("PasswordLabel");
         }
+    },
+    roles: {
+        type: [String],
+        optional: true,
+        blackbox: true,
+        allowedValues: ['entrepreneur', 'restaurateur', 'client']
     }
 });
 
