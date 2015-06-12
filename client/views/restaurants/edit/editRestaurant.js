@@ -9,7 +9,7 @@ Template.editRestaurant.helpers({
 Template.editRestaurant.events({
     "submit #editRestaurantForm": function () {
         var doc = AutoForm.getFormValues('editRestaurantForm').updateDoc;
-        if (doc.restaurateur == null) {
+        if (doc.$set.restaurateur == null) {
             alert('Modification éffectuée!\n' +
                 'Aucun restaurateur choisit');
         }
