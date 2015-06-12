@@ -11,5 +11,6 @@ Template.restaurants.helpers({
 Template.restaurants.events({
     "click .delete": function () {
         Restaurants.remove(this._id);
+        alert(TAPi18n.__("RestaurantDeletedMessage"));
     }
 });

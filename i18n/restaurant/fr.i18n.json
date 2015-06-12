@@ -3,5 +3,6 @@
   "RestaurantAddressLabel": "Adresse",
   "RestaurantRestaurateurLabel": "Restaurateur",
   "RestaurantTitleHome": "Liste de tous vos restaurants",
-  "NewRestaurantTitle": "Ajouter un restaurant"
+  "NewRestaurantTitle": "Ajouter un restaurant",
+  "RestaurantDeletedMessage": "Le restaurant a été supprimé."
 }
