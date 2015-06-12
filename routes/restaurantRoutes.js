@@ -23,3 +23,21 @@ Router.route('/restaurants/add', {
     }
 });
 
+Router.route('/restaurants/edit/:_id', {
+    name: 'editRestaurant',
+    waitOn: function () {
+        return [Meteor.subscribe("restaurant", this.params._id), Meteor.subscribe("restaurateurs")];
+    },
+    action: function () {
+        var id = this.params._id;
+        this.render('editRestaurant',{
+            data: {
+                restaurant: function () {
+                    return Restaurants.findOne({_id: id})
+                }
+            }
+        });
+        SEO.set({title: TAPi18n.__("EditRestaurantTitle")});
+    }
+});
+

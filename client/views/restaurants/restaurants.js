@@ -1,5 +1,5 @@
 Template.restaurants.helpers({
-    restaurants: function () {
+    restaurants: function(){
         return Restaurants.find();
     },
     restaurateurName: function () {
@@ -8,4 +8,8 @@ Template.restaurants.helpers({
     }
 });
 
-Template.restaurants.events({});
+Template.restaurants.events({
+    "click .delete": function () {
+        Restaurants.remove(this._id);
+    }
+});
