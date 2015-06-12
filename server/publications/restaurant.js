@@ -7,3 +7,7 @@
 Meteor.publish("restaurants", function(){
     return Restaurants.find();
 });
+
+Meteor.publish("restaurant", function(id){
+    return Restaurants.find({"_id": id});
+});

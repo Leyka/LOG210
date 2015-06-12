@@ -1,0 +1,13 @@
+<template name="editRestaurant">
+    {{#contentFor region="title"}}
+        {{_ "EditRestaurant"}}
+    {{/contentFor}}
+
+    {{# autoForm collection="Restaurants" doc=restaurant id="editRestaurantForm" type="update"}}
+        {{> afQuickField name="name"}}
+        {{> afQuickField name="address"}}
+        {{> afQuickField name="restaurateur" options=restaurateurs}}
+        <button type="submit" class="btn btn-primary">{{_ "SubmitButtonLabel"}}</button>
+    {{/autoForm}}
+
+</template>
