@@ -5,6 +5,9 @@ Template.restaurateurs.helpers({
     restaurants: function () {
         var restaurant = Restaurants.findOne({restaurateur: this._id});
         return restaurant.name;
+    },
+    isEmpty: function() {
+        return Meteor.users.find({"roles": "restaurateur"}).count() == 0;
     }
 });
 

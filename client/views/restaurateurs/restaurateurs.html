@@ -8,7 +8,9 @@
     {{/contentFor}}
 
 
-
+    {{#if isEmpty}}
+        <p class="alert alert-info">{{_ "EmptyRestaurateurMessage"}}</p>
+    {{else}}
     <table class="table table-striped">
         <thead>
         <tr>
@@ -31,4 +33,5 @@
         </tbody>
 
     </table>
+    {{/if}}
 </template>
