@@ -10,7 +10,7 @@ Template.addRestaurantForm.events({
     "submit #addRestaurantForm": function () {
         var doc = AutoForm.getFormValues('addRestaurantForm').insertDoc;
         if (doc.restaurateur == null) {
-            alert('Ajout éffectué!\n' +
+            alert('Ajout effectué!\n' +
                 'Aucun restaurateur choisit');
         }
     }

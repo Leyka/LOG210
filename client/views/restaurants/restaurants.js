@@ -9,8 +9,9 @@ Template.restaurants.helpers({
 });
 
 Template.restaurants.events({
-    "click .delete": function () {
-        Restaurants.remove(this._id);
+    "click .removeRestaurant": function () {
+        var id = this._id;
+        Meteor.call("removeRestaurant", id);
         alert(TAPi18n.__("RestaurantDeletedMessage"));
     }
 });
