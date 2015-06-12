@@ -1,4 +1,4 @@
-Template.addRestaurantForm.helpers({
+Template.addRestaurant.helpers({
     restaurateurs: function () {
         return Meteor.users.find({roles: "restaurateur"}).map(function (r) {
             return {label: r.profile.fullName, value: r._id};
@@ -6,9 +6,9 @@ Template.addRestaurantForm.helpers({
     }
 });
 
-Template.addRestaurantForm.events({
+Template.addRestaurant.events({
     "submit #addRestaurantForm": function () {
-        var doc = AutoForm.getFormValues('addRestaurantForm').insertDoc;
+        var doc = AutoForm.getFormValues('addRestaurant').insertDoc;
         if (doc.restaurateur == null) {
             alert('Ajout effectué!\n' +
                 'Aucun restaurateur choisit');

@@ -6,6 +6,7 @@
   "SubmitButtonLabel": "Envoyer",
   "ModifyButtonLabel": "Modifier",
   "DeleteButtonLabel": "Supprimer",
+  "ShowButtonLabel": "Afficher",
   "RestaurateursSideMenuText": "Restaurateurs",
   "RestaurantsSideMenuText": "Restaurants"
 }
