@@ -2,5 +2,10 @@
     {{#contentFor region="title"}}
         {{_ "NewRestaurantTitle" }}
     {{/contentFor}}
-    {{> quickForm collection="Restaurants" id="addRestaurantForm" type="insert"}}
+    {{# autoForm collection="Restaurants" id="addRestaurantForm" type="insert"}}
+        {{> afQuickField name="name"}}
+        {{> afQuickField name="address"}}
+        {{> afQuickField name="restaurateur" options=restaurateurs}}
+        <button type="submit" class="btn btn-primary">{{_ "SubmitButtonLabel"}}</button>
+    {{/autoForm}}
 </template>
