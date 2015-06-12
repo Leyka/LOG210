@@ -2,10 +2,10 @@
 Router.route('/restaurants', {
 
     name: 'restaurants',
-    waitOn: function(){
-        return Meteor.subscribe("restaurants");
+    waitOn: function () {
+        return [Meteor.subscribe("restaurateurs"), Meteor.subscribe("restaurants")];
     },
-    action: function(){
+    action: function () {
         this.render('restaurants'); // Template name
         SEO.set({title: "Restaurants"});
     }
@@ -14,7 +14,10 @@ Router.route('/restaurants', {
 Router.route('/restaurants/add', {
 
     name: 'newRestaurant',
-    action: function(){
+    waitOn: function () {
+        return Meteor.subscribe("restaurateurs");
+    },
+    action: function () {
         this.render('addRestaurantForm');
         SEO.set({title: TAPi18n.__("NewRestaurantTitle")});
     }
