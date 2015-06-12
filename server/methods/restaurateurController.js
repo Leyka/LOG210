@@ -2,6 +2,9 @@ Meteor.methods({
         addRestaurateur: function (doc) {
             check(doc, Match.Any);
             var id = Accounts.createUser(doc);
+            if (doc.restaurant != null) {
+                Meteor.call("assignRestaurateur", {restaurant: doc.restaurant, _id: id});
+            }
             Roles.addUsersToRoles(id, "restaurateur");
         },
         editRestaurateur: function (doc) {
@@ -16,11 +19,13 @@ Meteor.methods({
                         "profile.fullName": doc.profile.fullName,
                         "profile.birthday": doc.profile.birthday,
                         "profile.address": doc.profile.address,
-                        "profile.phoneNumber": doc.profile.phoneNumber,
-                        "profile.restaurant": doc.profile.restaurant
+                        "profile.phoneNumber": doc.profile.phoneNumber
                     }
                 }
-            )
+            );
+            if (doc.restaurant != null) {
+                Meteor.call("assignRestaurateur", {restaurant: doc.restaurant, _id: doc._id});
+            }
         },
         deleteRestaurateur: function (doc) {
             check(doc, Match.Any);

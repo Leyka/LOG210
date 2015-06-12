@@ -22,7 +22,7 @@ Template.addRestaurateurs.events({
             alert(TAPi18n.__("NoRestaurantAssignedText"));
         }
         else {
-            restaurateur.profile.restaurant = restaurantId;
+            restaurateur.restaurant = restaurantId;
         }
 
         Meteor.call("addRestaurateur", restaurateur);

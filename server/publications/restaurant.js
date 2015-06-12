@@ -4,10 +4,11 @@
  *  2nd arg: data we want to return
  */
 
-Meteor.publish("restaurants", function(){
+Meteor.publish("restaurants", function () {
     return Restaurants.find();
 });
 
-Meteor.publish("restaurant", function(id){
+Meteor.publish("restaurant", function (id) {
+    check(id, Match.Any);
     return Restaurants.find({"_id": id});
 });

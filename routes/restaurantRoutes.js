@@ -30,7 +30,7 @@ Router.route('/restaurants/edit/:_id', {
     },
     action: function () {
         var id = this.params._id;
-        this.render('editRestaurant',{
+        this.render('editRestaurant', {
             data: {
                 restaurant: function () {
                     return Restaurants.findOne({_id: id})

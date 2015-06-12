@@ -2,8 +2,8 @@ Template.restaurateurs.helpers({
     restaurateurs: function () {
         return Meteor.users.find({"roles": "restaurateur"});
     },
-    restaurant: function () {
-        var restaurant = Restaurants.findOne(this.profile.restaurant);
+    restaurants: function () {
+        var restaurant = Restaurants.findOne({restaurateur: this._id});
         return restaurant.name;
     }
 });

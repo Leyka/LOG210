@@ -1,4 +1,4 @@
-Template.editAccount.helpers({
+Template.editRestaurant.helpers({
     restaurateurs: function () {
         return Meteor.users.find({roles: "restaurateur"}).map(function (r) {
             return {label: r.profile.fullName, value: r._id};
@@ -6,11 +6,11 @@ Template.editAccount.helpers({
     }
 });
 
-Template.editAccount.events({
+Template.editRestaurant.events({
     "submit #editRestaurantForm": function () {
         var doc = AutoForm.getFormValues('editRestaurantForm').updateDoc;
         if (doc.restaurateur == null) {
-            alert('Ajout éffectué!\n' +
+            alert('Modification éffectuée!\n' +
                 'Aucun restaurateur choisit');
         }
     }

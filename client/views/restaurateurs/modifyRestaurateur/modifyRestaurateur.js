@@ -19,7 +19,7 @@ Template.modifyRestaurateur.helpers({
         return year + "-" + month + "-" + day;
     },
     assignedRestaurant: function (restaurant) {
-        if (restaurant == Template.parentData().profile.restaurant)
+        if (Restaurants.find({_id: restaurant, restaurateur: Template.parentData()._id}).count())
             return "selected";
     }
 });
@@ -43,7 +43,7 @@ Template.modifyRestaurateur.events({
             alert(TAPi18n.__("NoRestaurantAssignedText"))
         }
         else {
-            restaurateur.profile.restaurant = restaurantId;
+            restaurateur.restaurant = restaurantId;
         }
 
         Meteor.call("editRestaurateur", restaurateur);
