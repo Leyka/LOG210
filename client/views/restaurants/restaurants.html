@@ -6,17 +6,20 @@
     </div>
     {{/contentFor}}
 
-    <table class="table table-striped">
-        <thead>
+    {{#if isEmpty}}
+        <p class="alert alert-info">{{_ "EmptyRestaurantMessage"}}</p>
+    {{else}}
+        <table class="table table-striped">
+            <thead>
             <tr>
                 <th>{{_ "RestaurantNameLabel"}}</th>
                 <th>{{_ "RestaurantAddressLabel"}}</th>
                 <th>{{_ "RestaurateurTitle"}}</th>
                 <th>{{_ "OptionsTableHeader"}}</th>
             </tr>
-        </thead>
-        <tbody>
-        {{#each restaurants}}
+            </thead>
+            <tbody>
+            {{#each restaurants}}
                 <tr>
                     <td>{{name}}</td>
                     <td>{{address}}</td>
@@ -26,8 +29,9 @@
                         <a class="removeRestaurant btn btn-danger">{{_ "DeleteButtonLabel"}}</a>
                     </td>
                 </tr>
-        {{/each}}
-        </tbody>
-    </table>
+            {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
 </template>
 

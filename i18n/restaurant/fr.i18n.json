@@ -4,5 +4,6 @@
   "RestaurantRestaurateurLabel": "Restaurateur",
   "RestaurantTitleHome": "Liste de tous vos restaurants",
   "NewRestaurantTitle": "Ajouter un restaurant",
-  "RestaurantDeletedMessage": "Le restaurant a été supprimé."
+  "RestaurantDeletedMessage": "Le restaurant a été supprimé.",
+  "EmptyRestaurantMessage": "Il n'y a aucun restaurant pour le moment."
 }

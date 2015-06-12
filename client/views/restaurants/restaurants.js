@@ -5,7 +5,11 @@ Template.restaurants.helpers({
     restaurateurName: function () {
         var restaurateur = Meteor.users.findOne({_id: this.restaurateur});
         return restaurateur.profile.fullName;
+    },
+    isEmpty: function() {
+        return Restaurants.find().count() == 0;
     }
+
 });
 
 Template.restaurants.events({
