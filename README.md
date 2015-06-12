@@ -3,9 +3,9 @@
 ## Remise 
 
 ### Itération 2 
-* Plan Itération II : 5 juin, 8h30
-* Rapport II : 5 juin, 23h55
-* Demo : 12 juin, 9h00 
+* Plan Itération III : 26 juin, 8h30
+* Rapport III : 26 juin, 23h55
+* Demo : 3 juillet, 9h00 
 
 ## Chat 
 Vous vous sentez seul(e) ? Vous voulez un peu de compagnie? <br/>
