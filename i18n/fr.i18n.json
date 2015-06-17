@@ -8,5 +8,6 @@
   "DeleteButtonLabel": "Supprimer",
   "ShowButtonLabel": "Afficher",
   "RestaurateursSideMenuText": "Restaurateurs",
-  "RestaurantsSideMenuText": "Restaurants"
+  "RestaurantsSideMenuText": "Restaurants",
+  "MenusSideMenuText": "Menus"
 }

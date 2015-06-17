@@ -1,0 +1,8 @@
+{
+  "MenuNameLabel": "Nom",
+  "MenuTitleHome": "Liste de tous les menus",
+  "NewMenuTitle": "Ajouter un menu",
+  "MenuDeletedMessage": "Le menu a été supprimé.",
+  "EmptyMenuMessage": "Il n'y a aucun menu pour le moment.",
+  "ShowMenuTitle": "Afficher menu"
+}

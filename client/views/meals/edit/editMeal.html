@@ -1,0 +1,11 @@
+<template name="editMeal">
+    {{#contentFor region="title"}}
+        {{_ "EditMeal"}}
+    {{/contentFor}}
+    {{# autoForm collection="Meals" doc=meal id="editMealForm" type="update"}}
+        {{> afQuickField name="name"}}
+        {{> afQuickField name="price"}}
+        {{> afQuickField name="description"}}
+        <button type="submit" class="btn btn-primary">{{_ "SubmitButtonLabel"}}</button>
+    {{/autoForm}}
+</template>

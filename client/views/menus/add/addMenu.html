@@ -1,0 +1,9 @@
+<template name="addMenu">
+    {{#contentFor region="title"}}
+        {{_ "NewMenuTitle" }}
+    {{/contentFor}}
+    {{# autoForm collection="Menus" id="addMenuForm" type="insert"}}
+        {{> afQuickField name="name"}}
+        <button type="submit" class="btn btn-primary">{{_ "SubmitButtonLabel"}}</button>
+    {{/autoForm}}
+</template>
