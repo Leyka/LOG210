@@ -4,6 +4,8 @@
     {{/contentFor}}
     {{# autoForm collection="Menus" id="addMenuForm" type="insert"}}
         {{> afQuickField name="name"}}
+        {{> afQuickField name="meals"}}
+        {{> afQuickField name="restaurant" value=restaurantId }}
         <button type="submit" class="btn btn-primary">{{_ "SubmitButtonLabel"}}</button>
     {{/autoForm}}
 </template>

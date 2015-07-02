@@ -11,9 +11,29 @@
             {{_ "ShowMenuTitle"}}
         {{/contentFor}}
 
-        <div class="well">
-            <label for="">name</label>
-            {{ menu.name }}
-        </div>
+        <table>
+            <thead>
+                <tr class="row">
+                    <th class="col-sm-3">Nom</th>
+                    <th class="col-sm-3">Prix</th>
+                    <th class="col-sm-6">Description</th>
+                </tr>
+            </thead>
+        </table>
+        <hr>
+
+        {{#each meals}}
+            <div class="row well">
+                <div class="col-sm-3">
+                    {{ name }}
+                </div>
+                <div class="col-sm-3">
+                    {{ price }}
+                </div>
+                <div class="col-sm-6">
+                    {{ description }}
+                </div>
+            </div>
+        {{/each}}
     {{/if}}
 </template>

@@ -9,7 +9,10 @@ Menus.attachSchema(
             }
         },
         restaurant: {
-            type: String
+            type: String,
+            autoform: {
+                type: 'hidden'
+            }
         },
         meals: {
             type:[Object]

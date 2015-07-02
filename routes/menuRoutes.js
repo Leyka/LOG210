@@ -18,7 +18,12 @@ Router.route('/menus/:_resto_id/add', {
         return [Meteor.subscribe("menu"), Meteor.subscribe("restaurants")];
     },
     action: function () {
-        this.render('addMenu');
+        var restoId = this.params._resto_id;
+        this.render('addMenu', {
+            data: {
+                restaurantId: restoId
+            }
+        });
         SEO.set({title: TAPi18n.__("NewMenuTitle")});
     }
 });
@@ -48,7 +53,6 @@ Router.route('/menus/:_resto_id', {
     },
     action: function () {
         var restoId = this.params._resto_id;
-
         this.render('showMenu', {
             data: {
                 restaurantId: restoId
