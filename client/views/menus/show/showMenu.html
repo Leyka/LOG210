@@ -1,10 +1,19 @@
 <template name="showMenu">
     {{#contentFor region="title"}}
-        {{_ "ShowMenuTitle"}}
+        Menu
     {{/contentFor}}
 
-    <div class="well">
-        <label for="">name</label>
-        {{ menu.name }}
-    </div>
+    {{#if isEmpty}}
+        <p class="alert alert-info">{{_ "EmptyMenuMessage"}}</p>
+        <a class="btn btn-success" href="/menus/{{restaurantId}}/add"><i class="fa fa-plus"></i> {{_ "NewMenuTitle"}}</a>
+    {{else}}
+        {{#contentFor region="title"}}
+            {{_ "ShowMenuTitle"}}
+        {{/contentFor}}
+
+        <div class="well">
+            <label for="">name</label>
+            {{ menu.name }}
+        </div>
+    {{/if}}
 </template>

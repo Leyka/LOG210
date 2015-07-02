@@ -7,6 +7,32 @@ Menus.attachSchema(
             label: function() {
                 return TAPi18n.__("MenuNameLabel");
             }
+        },
+        restaurant: {
+            type: String
+        },
+        meals: {
+            type:[Object]
+        },
+        "meals.$.name": {
+            type: String,
+            label: function () {
+                return TAPi18n.__("MealNameLabel");
+            }
+        },
+        "meals.$.description": {
+            type: String,
+            label: function () {
+                return TAPi18n.__("MealDescriptionLabel");
+            }
+        },
+        "meals.$.price": {
+            type: Number,
+            decimal: true,
+            min: 0.0,
+            label: function () {
+                return TAPi18n.__("MealPriceLabel");
+            }
         }
     })
 );

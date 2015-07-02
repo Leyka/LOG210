@@ -10,5 +10,6 @@ Meteor.publish("menus", function () {
 
 Meteor.publish("menu", function (id) {
     check(id, Match.Any);
-    return Menus.find({"_id": id});
+    //return Menus.find({"_id": id});
+    return Menus.find({"restaurant": id});
 });

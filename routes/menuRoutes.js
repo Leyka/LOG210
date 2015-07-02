@@ -11,7 +11,7 @@ Router.route('/menus', {
     }
 });
 
-Router.route('/menus/add', {
+Router.route('/menus/:_resto_id/add', {
 
     name: 'newMenu',
     waitOn: function () {
@@ -41,18 +41,17 @@ Router.route('/menus/edit/:_id', {
     }
 });
 
-Router.route('/menus/:_id', {
+Router.route('/menus/:_resto_id', {
     name: 'showMenu',
     waitOn: function () {
-        return [Meteor.subscribe("menu", this.params._id), Meteor.subscribe("restaurants")];
+        return [Meteor.subscribe("menu", this.params._resto_id), Meteor.subscribe("restaurants")];
     },
     action: function () {
-        var id = this.params._id;
+        var restoId = this.params._resto_id;
+
         this.render('showMenu', {
             data: {
-                menu: function () {
-                    return Menus.findOne({_id: id})
-                }
+                restaurantId: restoId
             }
         });
         SEO.set({title: TAPi18n.__("ShowMenuTitle")});
