@@ -2,10 +2,36 @@
     {{#contentFor region="title"}}
         {{_ "ShowRestaurantTitle"}}
     {{/contentFor}}
-
     <div class="well">
-        <label for="">name</label>
-        {{ restaurant.name }}
+        <div class="row">
+            <div class="col-md-4">
+                <label>{{_ "RestaurantNameLabel"}}</label>
+                <p>
+                    {{ restaurant.name }}
+                </p>
+            </div>
+            <div class="col-md-4">
+                <label>{{_ "RestaurantAddressLabel"}}</label>
+                <p>
+                    {{ restaurant.address }}
+                </p>
+            </div>
+            <div class="col-md-4">
+                <label>Restaurateur</label>
+                <p>
+                    {{ restaurateurName }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/menus/{{restaurant._id}}" class="btn btn-primary col-md-6 btn-lg pull-right"><i class="fa fa-bars"></i> Menus</a>
+        </div>
+        <div class="col-md-6">
+            <a href="#" class="btn btn-warning col-md-6 btn-lg disabled"><i class="fa fa-shopping-cart"></i> {{_ "OrdersLabel"}}</a>
+        </div>
     </div>
 
 </template> 
