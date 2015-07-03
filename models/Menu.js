@@ -25,6 +25,7 @@ Menus.attachSchema(
         },
         "meals.$.description": {
             type: String,
+            optional: true,
             label: function () {
                 return TAPi18n.__("MealDescriptionLabel");
             }

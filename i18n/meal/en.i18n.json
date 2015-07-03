@@ -2,7 +2,7 @@
   "MealNameLabel": "Name",
   "MealPriceLabel": "Price",
   "MealDescriptionLabel": "Description",
-  "MealTitleHome": "List of all your meals",
+  "MealTitleHome": "List of all meals of the menu",
   "NewMealTitle": "Add new meal",
   "MealDeletedMessage": "The meal has been deleted.",
   "EmptyMealMessage": "There are no meals at this moment.",
