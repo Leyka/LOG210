@@ -52,6 +52,11 @@ Router.route('/restaurants/:_id', {
             data: {
                 restaurant: function () {
                     return Restaurants.findOne({_id: id})
+                },
+                restaurateurName: function() {
+                    var restaurateurId = Restaurants.findOne({_id: id}).restaurateur;
+                    var restaurateur = Meteor.users.findOne({_id: restaurateurId});
+                    return restaurateur.profile.fullName;
                 }
             }
         });
