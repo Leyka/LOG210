@@ -1,0 +1,98 @@
+<template name="addCommand">
+    {{#contentFor region="title"}}
+        {{_ "NewCommandTitle"}}
+    {{/contentFor}}
+    <div class="content"></div>
+
+</template>
+
+<template name="addCommandRestaurants">
+    {{#if isEmpty}}
+        <p class="alert alert-info">{{_ "EmptyRestaurantMessage"}}</p>
+    {{else}}
+        <h4>Restaurants</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{_ "RestaurantNameLabel"}}</th>
+                <th>{{_ "RestaurantAddressLabel"}}</th>
+                <th>{{_ "OptionsTableHeader"}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each restaurants}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{address}}</td>
+                    <td>
+                        <a class="btn btn-warning" href="/commands/add/{{_id}}">Choisir</a>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
+</template>
+
+<template name="addCommandMenus">
+    <form id="command">
+        <table>
+            <thead>
+            <tr class="row">
+                <th class="col-sm-3">Nom</th>
+                <th class="col-sm-3">Prix</th>
+                <th class="col-sm-4">Description</th>
+                <th class="col-sm-2">Quantité</th>
+            </tr>
+            </thead>
+        </table>
+        <hr>
+
+        {{#each meals}}
+            <div class="row well">
+                <div class="col-sm-3">
+                    {{ name }}
+                </div>
+                <div class="col-sm-3">
+                    {{ price }}
+                </div>
+                <div class="col-sm-4">
+                    {{ description }}
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" name="{{index}}" class="form-control" value="0" min="0">
+                </div>
+            </div>
+        {{/each}}
+        <button type="submit" class="btn btn-primary">Compléter la Commande</button>
+    </form>
+</template>
+
+<template name="completeCommand">
+    {{#contentFor region="title"}}
+        Nouvelle commande
+    {{/contentFor}}
+    <div class="row well">
+        {{#each selectedMeals}}
+            <div class="col-sm-6">
+                Repas : {{ meal.name }}
+            </div>
+            <div class="col-sm-6">
+                Quantité : {{ quantity }}
+            </div>
+        {{/each}}
+    </div>
+    {{# autoForm collection="Commands" id="addCommandForm" type="normal"}}
+        {{> afQuickField name="client" type="hidden" value=clientId}}
+        {{> afQuickField name="dateTime"}}
+        {{> afQuickField name="deliveryAddress" value=selectedAddress}}
+        Addresses disponibles :<select id="addressSelection">
+        {{#each clientAddresses}}
+            <option>{{this}}</option>
+        {{/each}}
+    </select>
+        <button type="button" class="btn btn-default" data-action=changeAddress>Changer d'adresse</button>
+        <br>
+        <button type="submit" class="btn btn-primary">Confirmer la commande</button>
+    {{/autoForm}}
+</template>

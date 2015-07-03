@@ -2,3 +2,12 @@ user_entrepreneur:
   email: entrepreneur@site.com
   password: password
   roles: [entrepreneur]
+user_client:
+  email: client@site.com
+  password: password
+  roles: [client]
+  profile:
+    fullName: Client Client
+    address: [1234 rue DuClient, deuxieme adresse]
+    birthday: 1
+    phoneNumber: 555 555-5555

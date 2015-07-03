@@ -1,0 +1,1 @@
+process.env.MAIL_URL = "smtp://adress%40gmail.com:password@smtp.gmail.com:465/";

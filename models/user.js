@@ -14,7 +14,7 @@ Schema.UserProfile = new SimpleSchema({
         }
     },
     address: {
-        type: String,
+        type: [String],
         label: function () {
             return TAPi18n.__("AddressLabel");
         }

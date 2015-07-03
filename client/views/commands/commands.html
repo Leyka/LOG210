@@ -1,0 +1,31 @@
+<template name="commands">
+    {{#contentFor region="title"}}
+        Commandes
+        <div class="pull-right">
+            <a class="btn btn-success" href="/commands/add"><i class="fa fa-plus"></i> Passer une commande</a>
+        </div>
+    {{/contentFor}}
+
+    {{#if isEmpty}}
+        <p class="alert alert-info">{{_ "EmptyCommandMessage"}}</p>
+    {{else}}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Date et heure</th>
+                <!--<th>{{_ "CommandDateTimeLabel"}}</th>-->
+                <th>Adresse de livraison</th>
+                <!--<th>{{_ "CommandDeliveryAddressLabel"}}</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            {{#each commands}}
+                <tr>
+                    <td>{{dateTime}}</td>
+                    <td>{{deliveryAddress}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
+</template>

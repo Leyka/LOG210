@@ -4,7 +4,7 @@ Menus.attachSchema(
     new SimpleSchema({
         name: {
             type: String,
-            label: function() {
+            label: function () {
                 return TAPi18n.__("MenuNameLabel");
             }
         },
@@ -15,7 +15,7 @@ Menus.attachSchema(
             }
         },
         meals: {
-            type:[Object]
+            type: [Object]
         },
         "meals.$.name": {
             type: String,
@@ -28,8 +28,7 @@ Menus.attachSchema(
             optional: true,
             label: function () {
                 return TAPi18n.__("MealDescriptionLabel");
-            },
-            optional: true
+            }
         },
         "meals.$.price": {
             type: Number,
@@ -44,13 +43,13 @@ Menus.attachSchema(
 
 // Allow Menus to CRUD in client
 Menus.allow({
-    insert: function(){
+    insert: function () {
         return true;
     },
-    update: function(){
+    update: function () {
         return true;
     },
-    remove: function(){
+    remove: function () {
         return true;
     }
 });
