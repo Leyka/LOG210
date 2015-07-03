@@ -3,12 +3,9 @@
 ## Remise 
 
 ### Itération 3 
-* Plan Itération III : 26 juin, 8h30
-* Rapport III : 26 juin, 23h55
-* Demo : 3 juillet, 9h00 
-
-### 
-On fait **F4** et **F5**
+* Plan Itération IV : 17 juillet, 8h30
+* Rapport IV : 17 juillet, 23h55
+* Demo : 24 juillet, 9h00  (15%)
 
 ## Chat 
 Vous vous sentez seul(e) ? Vous voulez un peu de compagnie? <br/>
