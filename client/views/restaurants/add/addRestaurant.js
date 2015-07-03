@@ -8,7 +8,7 @@ Template.addRestaurant.helpers({
 
 Template.addRestaurant.events({
     "submit #addRestaurantForm": function () {
-        var doc = AutoForm.getFormValues('addRestaurant').insertDoc;
+        var doc = AutoForm.getFormValues('addRestaurantForm').insertDoc;
         if (doc.restaurateur == null) {
             alert('Ajout effectué!\n' +
                 'Aucun restaurateur choisit');
