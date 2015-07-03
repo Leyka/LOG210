@@ -28,7 +28,8 @@ Menus.attachSchema(
             optional: true,
             label: function () {
                 return TAPi18n.__("MealDescriptionLabel");
-            }
+            },
+            optional: true
         },
         "meals.$.price": {
             type: Number,

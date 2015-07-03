@@ -1,6 +1,6 @@
 Template.meals.helpers({
     meals: function(){
-        return Meal.find();
+        return Meals.find();
     },
     isEmpty: function() {
         return Meals.find().count() == 0;
