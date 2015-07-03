@@ -8,15 +8,15 @@
         <a class="btn btn-success" href="/menus/{{restaurantId}}/add"><i class="fa fa-plus"></i> {{_ "NewMenuTitle"}}</a>
     {{else}}
         {{#contentFor region="title"}}
-            {{_ "ShowMenuTitle"}}
+            {{_ "MealTitleHome"}}  <strong> {{mealName}} </strong>
         {{/contentFor}}
 
         <table>
             <thead>
                 <tr class="row">
-                    <th class="col-sm-3">Nom</th>
-                    <th class="col-sm-3">Prix</th>
-                    <th class="col-sm-6">Description</th>
+                    <th class="col-sm-3">{{_ "MealNameLabel"}}</th>
+                    <th class="col-sm-3">{{_ "MealPriceLabel"}}</th>
+                    <th class="col-sm-6">{{_ "MealDescriptionLabel"}}</th>
                 </tr>
             </thead>
         </table>
@@ -28,7 +28,7 @@
                     {{ name }}
                 </div>
                 <div class="col-sm-3">
-                    {{ price }}
+                    {{ price }} $
                 </div>
                 <div class="col-sm-6">
                     {{ description }}
