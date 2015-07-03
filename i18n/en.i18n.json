@@ -9,5 +9,6 @@
   "ShowButtonLabel": "Show",
   "RestaurateursSideMenuText": "Restaurateurs",
   "RestaurantsSideMenuText": "Restaurants",
-  "MenusSideMenuText": "Menus"
+  "MenusSideMenuText": "Menus",
+  "CommandsSideMenuText": "Orders"
 }

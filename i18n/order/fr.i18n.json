@@ -1,3 +1,4 @@
 {
-  "OrdersLabel": "Commandes"
+  "OrdersLabel": "Commandes",
+  "EmptyCommandMessage": "Il n'y a pas de commandes pour le moment."
 }
