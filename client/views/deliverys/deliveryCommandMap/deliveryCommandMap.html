@@ -1,0 +1,15 @@
+<template name="deliveryCommandMap">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{_ "DeliveryDirectionsTitle"}}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="map-container">
+                {{> googleMap name="exampleMap" options=exampleMapOptions}}
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div id="directionsPanel"></div>
+        </div>
+    </div>
+</template>

@@ -26,13 +26,16 @@ Template.addCommandMenus.events({
     "submit #command": function (event) {
         var form = $(event.target).serializeArray();
         var meals = [];
+        var restaurantId = form[0].value;
         form.forEach(function (e) {
-            if (e.value > 0)
-                meals.push({meal: Menus.findOne().meals[parseInt(e.name)], quantity: e.value});
+            if (e.name != "restaurantId") {
+                if (e.value > 0)
+                    meals.push({meal: Menus.findOne().meals[parseInt(e.name)], quantity: e.value});
+            }
         });
         Session.set("commandMeals", meals);
         event.preventDefault();
-        Router.go("completeCommand");
+        Router.go("completeCommand", {_id: restaurantId});
     }
 });
 
@@ -54,6 +57,10 @@ Template.completeCommand.helpers({
         return Meteor.user().profile.address;
     }
 });
+var autocomplete = null;
+Template.completeCommand.onRendered(function () {
+    autocomplete = AutocompleteInput('[name="deliveryAddress"]');
+});
 
 Template.completeCommand.events({
     "submit #addCommandForm": function (event) {
@@ -62,6 +69,7 @@ Template.completeCommand.events({
         doc.client = form.client.value;
         doc.dateTime = form.dateTime.value;
         doc.deliveryAddress = form.deliveryAddress.value;
+        doc.restaurant = form.restaurant.value;
         selectedAddress.set(doc.deliveryAddress);
         doc.meals = Session.get("commandMeals");
         var mongoId = new Mongo.ObjectID();

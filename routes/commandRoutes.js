@@ -27,18 +27,28 @@ Router.route('/commands/add/:_id', {
         return [Meteor.subscribe("menu", this.params._id)];
     },
     action: function () {
-        this.render('addCommandMenus');
+        var id = this.params._id;
+        this.render('addCommandMenus', {
+            data: {
+                restaurantId: id
+            }
+        });
         SEO.set({title: "Add Command"});
     }
 });
 
-Router.route('/commands/complete', {
+Router.route('/commands/complete/:_id', {
     name: "completeCommand",
     waitOn: function () {
         return [Meteor.subscribe("restaurateurs")];
     },
     action: function () {
-        this.render("completeCommand");
+        var id = this.params._id;
+        this.render('completeCommand', {
+            data: {
+                restaurantId: id
+            }
+        });
         SEO.set({title: "Complete Command"});
     }
 });

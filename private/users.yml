@@ -2,12 +2,35 @@ user_entrepreneur:
   email: entrepreneur@site.com
   password: password
   roles: [entrepreneur]
+  profile:
+    fullName: Entre Preneur
+    address: [1234 rue DuPreneur]
+    birthday: 1
+    phoneNumber: 555 555-5555
 user_client:
   email: client@site.com
   password: password
   roles: [client]
   profile:
-    fullName: Client Client
-    address: [1234 rue DuClient, deuxieme adresse]
+    fullName: Clie Ent
+    address: [1234 rue DuClient]
+    birthday: 1
+    phoneNumber: 555 555-5555
+user_restaurateur:
+  email: restaurateur@site.com
+  password: password
+  roles: [restaurateur]
+  profile:
+    fullName: Restau Rateur
+    address: [1234 rue DuRestaurateur]
+    birthday: 1
+    phoneNumber: 555 555-5555
+user_deliveryman:
+  email: livreur@site.com
+  password: password
+  roles: [deliveryman]
+  profile:
+    fullName: Livre Reur
+    address: [{1234 Rue du Livreur, Repentigny, QC, Canada}]
     birthday: 1
     phoneNumber: 555 555-5555

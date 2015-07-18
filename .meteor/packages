@@ -14,7 +14,6 @@ raix:handlebar-helpers
 audit-argument-checks
 fastclick
 manuelschoebel:ms-seo
-browser-policy
 fortawesome:fontawesome
 tap:i18n
 reactive-var
@@ -25,3 +24,4 @@ alanning:roles
 tsega:bootstrap3-datetimepicker@=3.1.3_3
 aldeed:autoform-bs-datetimepicker
 email
+dburles:google-maps

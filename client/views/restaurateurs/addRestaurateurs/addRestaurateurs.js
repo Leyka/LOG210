@@ -1,3 +1,8 @@
+var autocomplete = null;
+Template.addRestaurateurs.onRendered(function () {
+    autocomplete = AutocompleteInput('#address');
+});
+
 Template.addRestaurateurs.helpers({
     restaurants: function () {
         return Restaurants.find();
@@ -5,6 +10,9 @@ Template.addRestaurateurs.helpers({
 });
 
 Template.addRestaurateurs.events({
+    "focus #address": function () {
+        Geolocalisation(autocomplete);
+    },
     "submit #addRestaurateur": function (event) {
         var restaurateur = {};
         restaurateur.email = event.target.email.value;

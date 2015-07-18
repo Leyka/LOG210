@@ -66,7 +66,7 @@ Schema.User = new SimpleSchema({
         type: [String],
         optional: true,
         blackbox: true,
-        allowedValues: ['entrepreneur', 'restaurateur', 'client']
+        allowedValues: ['entrepreneur', 'restaurateur', 'client', 'deliveryman']
     }
 });
 

@@ -6,15 +6,16 @@ Meteor.methods({
                 client: doc.client,
                 dateTime: doc.dateTime,
                 deliveryAddress: doc.deliveryAddress,
-                meals: doc.meals
+                meals: doc.meals,
+                restaurant: doc.restaurant
             });
             var mealString = "";
             doc.meals.forEach(function (e) {
                 mealString += "Repas: " + e.meal.name + " - Quantite: " + e.quantity + "\n";
             });
             Email.send({
-                from: "cilaf.93@gmail.com",
-                to: "cilaf.93@gmail.com",
+                from: "i.love.log210@gmail.com",
+                to: Meteor.user().emails[0].address,
                 subject: "Confirmation de commande - " + doc._id,
                 text: "Date: " + doc.dateTime + "\nAdresse: " + doc.deliveryAddress + "\n" + mealString
             });

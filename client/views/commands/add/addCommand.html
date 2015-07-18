@@ -47,7 +47,7 @@
             </thead>
         </table>
         <hr>
-
+        <input type="hidden" name="restaurantId" value="{{restaurantId}}">
         {{#each meals}}
             <div class="row well">
                 <div class="col-sm-3">
@@ -84,6 +84,7 @@
     </div>
     {{# autoForm collection="Commands" id="addCommandForm" type="normal"}}
         {{> afQuickField name="client" type="hidden" value=clientId}}
+        {{> afQuickField name="restaurant" type="hidden" value=restaurantId}}
         {{> afQuickField name="dateTime"}}
         {{> afQuickField name="deliveryAddress" value=selectedAddress}}
         Addresses disponibles :<select id="addressSelection">
