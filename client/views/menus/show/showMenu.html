@@ -1,12 +1,15 @@
 <template name="showMenu">
     {{#contentFor region="title"}}
-        Menu
+        {{_ "MenuTitle"}}
     {{/contentFor}}
 
     {{#if isEmpty}}
         <p class="alert alert-info">{{_ "EmptyMenuMessage"}}</p>
-        <a class="btn btn-success" href="/menus/{{restaurantId}}/add"><i class="fa fa-plus"></i> {{_ "NewMenuTitle"}}
-        </a>
+        {{#if isInRole 'restaurateur'}}
+            <a class="btn btn-success" href="/menus/{{restaurantId}}/add"><i
+                    class="fa fa-plus"></i> {{_ "NewMenuTitle"}}
+            </a>
+        {{/if}}
     {{else}}
         {{#contentFor region="title"}}
             {{_ "MealTitleHome"}}  <strong> {{mealName}} </strong>

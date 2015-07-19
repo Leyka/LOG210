@@ -8,5 +8,6 @@
   "NameTableHeader": "Nom",
   "RestaurantTableHeader": "Restaurant",
   "OptionsTableHeader": "Options",
-  "EmptyRestaurateurMessage": "Il n'y a aucun restaurateurs pour le moment."
+  "EmptyRestaurateurMessage": "Il n'y a aucun restaurateurs pour le moment.",
+  "RestaurateurLabel": "Restaurateur"
 }

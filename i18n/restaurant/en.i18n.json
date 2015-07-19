@@ -6,5 +6,6 @@
   "NewRestaurantTitle": "Add new restaurant",
   "RestaurantDeletedMessage": "The restaurant has been deleted.",
   "EmptyRestaurantMessage": "There is no restaurants at this moment.",
-  "ShowRestaurantTitle": "Show restaurant"
+  "ShowRestaurantTitle": "Show restaurant",
+  "EditRestaurant": "Edit Restaurant"
 }

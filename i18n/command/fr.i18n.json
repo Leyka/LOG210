@@ -1,0 +1,18 @@
+{
+  "CommandsTitle": "Commandes",
+  "PassCommandLabel": "Passer une commande",
+  "RestaurantsTitle": "Restaurants",
+  "NameLabel": "Nom",
+  "PriceLabel": "Prix",
+  "DescriptionLabel": "Description",
+  "QuantityLabel": "Quantité",
+  "CompleteCommandButton": "Compléter la commande",
+  "NewCommandTitle": "Nouvelle commande",
+  "MealLabel": "Repas",
+  "AvailableAddressLabel": "Adresses disponibles",
+  "ChangeAddressButton": "Changer l'adresse",
+  "ConfirmCommand": "Confirmer la commande",
+  "ConfirmationNumberAlert": "Numéro de confirmation: ",
+  "DateTimeLabel": "Date et heure",
+  "DeliveryAddressLabel": "Adresse de livraison"
+}

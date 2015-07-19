@@ -4,5 +4,9 @@
   "DeliverysCommandListTitle": "List of available commands",
   "DeliverysSideMenuText": "Deliveries",
   "DeliverysTitle": "Deliveries",
-  "DeliveryDirectionsTitle": "Delivery Directions"
+  "DeliveryDirectionsTitle": "Delivery Directions",
+  "LocationLabel": "Location",
+  "StartButton": "Start",
+  "EnterLocationPlaceholder": "Enter your current location",
+  "CommandConfirmedAlert": "Command Confirmed."
 }

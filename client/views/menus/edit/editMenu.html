@@ -1,9 +1,0 @@
-<template name="editMenu">
-        {{#contentFor region="title"}}
-            {{_ "EditMenu"}}
-        {{/contentFor}}
-        {{# autoForm collection="Menus" doc=menu id="editMenuForm" type="update"}}
-            {{> afQuickField name="name"}}
-            <button type="submit" class="btn btn-primary">{{_ "SubmitButtonLabel"}}</button>
-        {{/autoForm}}
-</template>

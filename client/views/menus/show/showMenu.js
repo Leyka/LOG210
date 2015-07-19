@@ -1,16 +1,14 @@
 Template.showMenu.helpers({
-    isEmpty: function() {
+    isEmpty: function () {
         return Menus.find().count() == 0;
     },
-    meals: function() {
+    meals: function () {
         var menu = Menus.findOne();
         return menu.meals;
     },
-    mealName: function() {
+    mealName: function () {
         return Menus.findOne().name;
     }
 });
 
-Template.showMenu.events({
-
-});
+Template.showMenu.events({});

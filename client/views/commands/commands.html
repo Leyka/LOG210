@@ -1,8 +1,8 @@
 <template name="commands">
     {{#contentFor region="title"}}
-        Commandes
+        {{_ "CommandsTitle"}}
         <div class="pull-right">
-            <a class="btn btn-success" href="/commands/add"><i class="fa fa-plus"></i> Passer une commande</a>
+            <a class="btn btn-success" href="/commands/add"><i class="fa fa-plus"></i> {{_ "PassCommandLabel"}}</a>
         </div>
     {{/contentFor}}
 
@@ -12,10 +12,8 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Date et heure</th>
-                <!--<th>{{_ "CommandDateTimeLabel"}}</th>-->
-                <th>Adresse de livraison</th>
-                <!--<th>{{_ "CommandDeliveryAddressLabel"}}</th>-->
+                <th>{{_ "DateTimeLabel"}}</th>
+                <th>{{_ "DeliveryAddressLabel"}}</th>
             </tr>
             </thead>
             <tbody>

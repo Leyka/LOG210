@@ -10,7 +10,7 @@
     {{#if isEmpty}}
         <p class="alert alert-info">{{_ "EmptyRestaurantMessage"}}</p>
     {{else}}
-        <h4>Restaurants</h4>
+        <h4>{{_ "RestaurantsTitle"}}</h4>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -25,7 +25,7 @@
                     <td>{{name}}</td>
                     <td>{{address}}</td>
                     <td>
-                        <a class="btn btn-warning" href="/commands/add/{{_id}}">Choisir</a>
+                        <a class="btn btn-warning" href="/commands/add/{{_id}}">{{_ "SelectButton"}}</a>
                     </td>
                 </tr>
             {{/each}}
@@ -39,10 +39,10 @@
         <table>
             <thead>
             <tr class="row">
-                <th class="col-sm-3">Nom</th>
-                <th class="col-sm-3">Prix</th>
-                <th class="col-sm-4">Description</th>
-                <th class="col-sm-2">Quantité</th>
+                <th class="col-sm-3">{{_ "NameLabel"}}</th>
+                <th class="col-sm-3">{{_ "PriceLabel"}}</th>
+                <th class="col-sm-4">{{_ "DescriptionLabel"}}</th>
+                <th class="col-sm-2">{{_ "QuantityLabel"}}</th>
             </tr>
             </thead>
         </table>
@@ -64,21 +64,21 @@
                 </div>
             </div>
         {{/each}}
-        <button type="submit" class="btn btn-primary">Compléter la Commande</button>
+        <button type="submit" class="btn btn-primary">{{_ "CompleteCommandButton"}}</button>
     </form>
 </template>
 
 <template name="completeCommand">
     {{#contentFor region="title"}}
-        Nouvelle commande
+        {{_ "NewCommandTitle"}}
     {{/contentFor}}
     <div class="row well">
         {{#each selectedMeals}}
             <div class="col-sm-6">
-                Repas : {{ meal.name }}
+                {{_ "MealLabel"}} : {{ meal.name }}
             </div>
             <div class="col-sm-6">
-                Quantité : {{ quantity }}
+                {{_ "QuantityLabel"}} : {{ quantity }}
             </div>
         {{/each}}
     </div>
@@ -87,13 +87,13 @@
         {{> afQuickField name="restaurant" type="hidden" value=restaurantId}}
         {{> afQuickField name="dateTime"}}
         {{> afQuickField name="deliveryAddress" value=selectedAddress}}
-        Addresses disponibles :<select id="addressSelection">
+        {{_ "AvailableAddressLabel"}} :<select id="addressSelection">
         {{#each clientAddresses}}
             <option>{{this}}</option>
         {{/each}}
     </select>
-        <button type="button" class="btn btn-default" data-action=changeAddress>Changer d'adresse</button>
+        <button type="button" class="btn btn-default" data-action=changeAddress>{{_ "ChangeAddressButton"}}</button>
         <br>
-        <button type="submit" class="btn btn-primary">Confirmer la commande</button>
+        <button type="submit" class="btn btn-primary">{{_ "ConfirmCommand"}}</button>
     {{/autoForm}}
 </template>

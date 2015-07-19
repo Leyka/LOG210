@@ -27,8 +27,6 @@ Template.deliveryCommandMap.onCreated(function () {
                     });
                     directionRenderer.setPanel(document.getElementById('directionsPanel'));
                 }
-                else
-                    $("#error").append("Unable to retrieve your route<br />");
             }
         );
     });

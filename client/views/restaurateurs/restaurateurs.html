@@ -1,37 +1,37 @@
 <template name="restaurateurs">
-
     {{#contentFor region="title"}}
         {{_ "RestaurateurTitle"}}
         <div class="pull-right">
-            <a class="btn btn-success" href="/addRestaurateurs"><i class="fa fa-plus"></i> {{_ "AddRestaurateurTitle"}}</a>
+            <a class="btn btn-success" href="/addRestaurateurs"><i class="fa fa-plus"></i> {{_ "AddRestaurateurTitle"}}
+            </a>
         </div>
     {{/contentFor}}
-
 
     {{#if isEmpty}}
         <p class="alert alert-info">{{_ "EmptyRestaurateurMessage"}}</p>
     {{else}}
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>{{_ "NameTableHeader"}}</th>
-            <th>{{_ "RestaurantTableHeader"}}</th>
-            <th>{{_ "OptionsTableHeader"}}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {{#each restaurateurs}}
+        <table class="table table-striped">
+            <thead>
             <tr>
-                <td>{{profile.fullName}}</td>
-                <td>{{restaurants}}</td>
-                <td>
-                    <a class="btn btn-primary" href="/modifyRestaurateur/{{_id}}">{{_ "ModifyButtonLabel"}}</a>
-                    <a class="btn btn-danger" data-action=deleteRestaurateur id="{{_id}}">{{_ "DeleteButtonLabel"}}</a>
-                </td>
+                <th>{{_ "NameTableHeader"}}</th>
+                <th>{{_ "RestaurantTableHeader"}}</th>
+                <th>{{_ "OptionsTableHeader"}}</th>
             </tr>
-        {{/each}}
-        </tbody>
-
-    </table>
+            </thead>
+            
+            <tbody>
+            {{#each restaurateurs}}
+                <tr>
+                    <td>{{profile.fullName}}</td>
+                    <td>{{restaurants}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="/modifyRestaurateur/{{_id}}">{{_ "ModifyButtonLabel"}}</a>
+                        <a class="btn btn-danger" data-action=deleteRestaurateur
+                           id="{{_id}}">{{_ "DeleteButtonLabel"}}</a>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
     {{/if}}
 </template>

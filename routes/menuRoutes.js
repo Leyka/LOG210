@@ -1,18 +1,4 @@
-// GET a list of Menus
-Router.route('/menus', {
-
-    name: 'menus',
-    waitOn: function () {
-        return [Meteor.subscribe("menus"), Meteor.subscribe("restaurants")];
-    },
-    action: function () {
-        this.render('menus'); // Template name
-        SEO.set({title: "Menus"});
-    }
-});
-
 Router.route('/menus/:_resto_id/add', {
-
     name: 'newMenu',
     waitOn: function () {
         return [Meteor.subscribe("menu"), Meteor.subscribe("restaurants")];

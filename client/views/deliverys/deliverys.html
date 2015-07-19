@@ -5,12 +5,13 @@
 
     <form id="newDelivery">
         <div class="form-group">
-            <label for="emplacement">Emplacement</label>
+            <label for="emplacement">{{_ "LocationLabel"}}</label>
 
             <div id="locationField">
-                <input class="form-control" id="autocomplete" placeholder="Entrer l'adresse" type="text">
+                <input class="form-control" id="autocomplete" placeholder="{{_ "EnterLocationPlaceholder"}}"
+                       type="text">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Démarrer</button>
+        <button type="submit" class="btn btn-primary">{{_ "StartButton"}}</button>
     </form>
 </template>

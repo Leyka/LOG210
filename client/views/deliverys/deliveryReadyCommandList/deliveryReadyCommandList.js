@@ -28,6 +28,6 @@ Template.deliveryReadyCommandList.events({
     },
     "click [data-action=AcceptCommand]": function () {
         Deliveries.insert({deliveryman: Meteor.userId(), command: selectedCommand.get()});
-        alert("Commande confirmée");
+        alert(TAPi18n.__("CommandConfirmedAlert"));
     }
 });

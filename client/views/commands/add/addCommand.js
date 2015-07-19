@@ -74,7 +74,7 @@ Template.completeCommand.events({
         doc.meals = Session.get("commandMeals");
         var mongoId = new Mongo.ObjectID();
         doc._id = mongoId._str;
-        alert("Numéro de confirmation: " + doc._id);
+        alert(TAPi18n.__("ConfirmationNumberAlert") + doc._id);
         Meteor.call("addCommand", doc);
         Router.go("commands");
     },
