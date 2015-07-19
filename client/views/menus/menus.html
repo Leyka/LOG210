@@ -1,9 +1,11 @@
 <template name="menus">
     {{#contentFor region="title"}}
         Menus
-        <div class="pull-right">
-            <a class="btn btn-success" href="/menus/add"><i class="fa fa-plus"></i> {{_ "NewMenuTitle"}}</a>
-        </div>
+        {{#if isInRole 'restaurateur'}}
+            <div class="pull-right">
+                <a class="btn btn-success" href="/menus/add"><i class="fa fa-plus"></i> {{_ "NewMenuTitle"}}</a>
+            </div>
+        {{/if}}
     {{/contentFor}}
 
     {{#if isEmpty}}
@@ -15,8 +17,10 @@
                 <th>{{_ "MenuNameLabel"}}</th>
                 <td>
                     <a class="btn btn-warning" href="/menus/{{_id}}">{{_ "ShowButtonLabel"}}</a>
-                    <a class="btn btn-primary" href="/menus/edit/{{_id}}">{{_ "ModifyButtonLabel"}}</a>
-                    <a class="removeMenu btn btn-danger">{{_ "DeleteButtonLabel"}}</a>
+                    {{#if isInRole 'restaurateur'}}
+                        <a class="btn btn-primary" href="/menus/edit/{{_id}}">{{_ "ModifyButtonLabel"}}</a>
+                        <a class="removeMenu btn btn-danger">{{_ "DeleteButtonLabel"}}</a>
+                    {{/if}}
                 </td>
             </tr>
             </thead>

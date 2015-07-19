@@ -13,9 +13,17 @@
                 <ul class="nav nav-stacked">
                     <li><a href="/"><i class="fa fa-home"></i> {{_ "HomeLink"}}</a></li>
                     <li><a href="/restaurants"><i class="fa fa-cutlery"></i> {{_ "RestaurantsSideMenuText"}}</a></li>
-                    <li><a href="/restaurateurs"><i class="fa fa-users"></i> {{_ "RestaurateursSideMenuText"}}</a></li>
-                    <li><a href="/commands"><i class="fa fa-users"></i> {{_ "CommandsSideMenuText"}}</a></li>
-                    <li><a href="/deliverys"><i class="fa fa-users"></i> {{_ "DeliverysSideMenuText"}}</a></li>
+                    {{#if isInRole 'restaurateur'}}
+                        <li><a href="/restaurateurs"><i class="fa fa-users"></i> {{_ "RestaurateursSideMenuText"}}</a>
+                        </li>
+                    {{/if}}
+                    {{#if isInRole 'client'}}
+                        <li><a href="/commands"><i class="fa fa-users"></i> {{_ "CommandsSideMenuText"}}</a></li>
+                    {{/if}}
+                    {{#if isInRole 'deliveryman'}}
+                        <li><a href="/deliverys"><i class="fa fa-paper-plane"></i> {{_ "DeliverysSideMenuText"}}</a>
+                        </li>
+                    {{/if}}
                 </ul>
                 <hr>
             </div>

@@ -5,7 +5,8 @@
 
     {{#if isEmpty}}
         <p class="alert alert-info">{{_ "EmptyMenuMessage"}}</p>
-        <a class="btn btn-success" href="/menus/{{restaurantId}}/add"><i class="fa fa-plus"></i> {{_ "NewMenuTitle"}}</a>
+        <a class="btn btn-success" href="/menus/{{restaurantId}}/add"><i class="fa fa-plus"></i> {{_ "NewMenuTitle"}}
+        </a>
     {{else}}
         {{#contentFor region="title"}}
             {{_ "MealTitleHome"}}  <strong> {{mealName}} </strong>
@@ -13,11 +14,11 @@
 
         <table>
             <thead>
-                <tr class="row">
-                    <th class="col-sm-3">{{_ "MealNameLabel"}}</th>
-                    <th class="col-sm-3">{{_ "MealPriceLabel"}}</th>
-                    <th class="col-sm-6">{{_ "MealDescriptionLabel"}}</th>
-                </tr>
+            <tr class="row">
+                <th class="col-sm-3">{{_ "MealNameLabel"}}</th>
+                <th class="col-sm-6">{{_ "MealDescriptionLabel"}}</th>
+                <th class="col-sm-3">{{_ "MealPriceLabel"}}</th>
+            </tr>
             </thead>
         </table>
         <hr>
@@ -27,11 +28,11 @@
                 <div class="col-sm-3">
                     {{ name }}
                 </div>
-                <div class="col-sm-3">
-                    {{ price }} $
-                </div>
                 <div class="col-sm-6">
                     {{ description }}
+                </div>
+                <div class="col-sm-3">
+                    {{ price }} $
                 </div>
             </div>
         {{/each}}
