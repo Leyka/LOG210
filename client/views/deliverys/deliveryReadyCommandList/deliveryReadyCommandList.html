@@ -1,0 +1,32 @@
+<template name="deliveryReadyCommandList">
+    {{#contentFor region="title"}}
+        {{_ "DeliverysCommandListTitle"}}
+    {{/contentFor}}
+
+    {{#if isEmpty}}
+        <p class="alert alert-info">{{_ "EmptyCommandMessage"}}</p>
+    {{else}}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                {{_ "CommandDeliveryAddressLabel"}}
+            </tr>
+            </thead>
+            <tbody>
+            {{#each commands}}
+                <tr>
+                    <td>{{deliveryAddress}}</td>
+                    <td>
+                        <button type="button" class="btn btn-info" data-action=SelectCommand
+                                id="{{restaurant}}+{{deliveryAddress}}+{{_id}}">{{_ "SelectButton"}}</button>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+
+        <div id="map"></div>
+        <br>
+        <button type="button" class="btn btn-success" data-action=AcceptCommand>{{_ "AcceptCommandButton"}}</button>
+    {{/if}}
+</template>

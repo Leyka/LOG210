@@ -19,6 +19,11 @@ SetUserLanguage = function (lang) {
     Session.set('language', localStorage.getItem('language'));
     TAPi18n.setLanguage(lang);
     T9n.setLanguage(lang);
+    GoogleMaps.load({
+        'sensor': true, //optional
+        'language': lang,  //optional
+        'libraries': 'places,directions'
+    });
 };
 
 Meteor.startup(function () {

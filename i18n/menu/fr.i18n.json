@@ -4,5 +4,6 @@
   "NewMenuTitle": "Ajouter un menu",
   "MenuDeletedMessage": "Le menu a été supprimé.",
   "EmptyMenuMessage": "Il n'y a aucun menu pour le moment.",
-  "ShowMenuTitle": "Afficher menu"
+  "ShowMenuTitle": "Afficher menu",
+  "MenuButton": "Menu"
 }

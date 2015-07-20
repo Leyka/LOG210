@@ -6,5 +6,6 @@
   "NewRestaurantTitle": "Ajouter un restaurant",
   "RestaurantDeletedMessage": "Le restaurant a été supprimé.",
   "EmptyRestaurantMessage": "Il n'y a aucun restaurant pour le moment.",
-  "ShowRestaurantTitle": "Afficher restaurant"
+  "ShowRestaurantTitle": "Afficher restaurant",
+  "EditRestaurant": "Modifier le Restaurant"
 }

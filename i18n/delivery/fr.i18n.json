@@ -1,0 +1,12 @@
+{
+  "CommandDeliveryAddressLabel": "Adresse de livraison",
+  "AcceptCommandButton": "Accepter la commande",
+  "DeliverysCommandListTitle": "Liste des commandes disponibles",
+  "DeliverysSideMenuText": "Livraisons",
+  "DeliverysTitle": "Livraisons",
+  "DeliveryDirectionsTitle": "Trajectoire de la livraison",
+  "LocationLabel": "Location",
+  "StartButton": "Commencer",
+  "EnterLocationPlaceholder": "Entrez votre emplacement présent",
+  "CommandConfirmedAlert": "Commande confirmée."
+}

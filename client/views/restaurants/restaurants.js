@@ -1,12 +1,12 @@
 Template.restaurants.helpers({
-    restaurants: function(){
+    restaurants: function () {
         return Restaurants.find();
     },
     restaurateurName: function () {
         var restaurateur = Meteor.users.findOne({_id: this.restaurateur});
         return restaurateur.profile.fullName;
     },
-    isEmpty: function() {
+    isEmpty: function () {
         return Restaurants.find().count() == 0;
     }
 

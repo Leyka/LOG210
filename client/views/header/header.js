@@ -5,7 +5,7 @@ Template.header.helpers({
             {id: "fr", value: "Français", active: GetUserLanguage() == "fr" ? "active" : ""}
         ]
     },
-    currentLanguage: function(){
+    currentLanguage: function () {
         return GetUserLanguage() == "en" ? "English" : "Français";
     },
     userName: function () {

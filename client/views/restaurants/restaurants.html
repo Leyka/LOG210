@@ -2,8 +2,11 @@
     {{#contentFor region="title"}}
         Restaurants
         <div class="pull-right">
-        <a class="btn btn-success" href="/restaurants/add"><i class="fa fa-plus"></i> {{_ "NewRestaurantTitle"}}</a>
-    </div>
+            {{#if isInRole 'entrepreneur'}}
+                <a class="btn btn-success" href="/restaurants/add"><i class="fa fa-plus"></i> {{_ "NewRestaurantTitle"}}
+                </a>
+            {{/if}}
+        </div>
     {{/contentFor}}
 
     {{#if isEmpty}}
@@ -26,8 +29,10 @@
                     <td>{{restaurateurName}}</td>
                     <td>
                         <a class="btn btn-warning" href="/restaurants/{{_id}}">{{_ "ShowButtonLabel"}}</a>
-                        <a class="btn btn-primary" href="/restaurants/edit/{{_id}}">{{_ "ModifyButtonLabel"}}</a>
-                        <a class="removeRestaurant btn btn-danger">{{_ "DeleteButtonLabel"}}</a>
+                        {{#if isInRole 'entrepreneur'}}
+                            <a class="btn btn-primary" href="/restaurants/edit/{{_id}}">{{_ "ModifyButtonLabel"}}</a>
+                            <a class="removeRestaurant btn btn-danger">{{_ "DeleteButtonLabel"}}</a>
+                        {{/if}}
                     </td>
                 </tr>
             {{/each}}
@@ -35,4 +40,3 @@
         </table>
     {{/if}}
 </template>
-

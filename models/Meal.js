@@ -1,5 +1,5 @@
-Meals = new Mongo.Collection('meals');
 Schemas = {};
+
 Schemas.Meals = new SimpleSchema({
     name: {
         type: String,
@@ -20,19 +20,5 @@ Schemas.Meals = new SimpleSchema({
         label: function () {
             return TAPi18n.__("MealPriceLabel");
         }
-    }
-});
-Meals.attachSchema(Schemas.Meals);
-
-// Allow Meals to CRUD in client
-Meals.allow({
-    insert: function () {
-        return true;
-    },
-    update: function () {
-        return true;
-    },
-    remove: function () {
-        return true;
     }
 });

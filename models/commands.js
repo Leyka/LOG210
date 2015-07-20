@@ -41,6 +41,9 @@ Commands.attachSchema(
                 //return TAPi18n.__("DeliveryAddressLabel");
                 return "Adresse de livraison"
             }
+        },
+        restaurant: {
+            type: String
         }
     })
 );

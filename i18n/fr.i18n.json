@@ -10,5 +10,6 @@
   "RestaurateursSideMenuText": "Restaurateurs",
   "RestaurantsSideMenuText": "Restaurants",
   "MenusSideMenuText": "Menus",
-  "CommandsSideMenuText": "Commandes"
+  "CommandsSideMenuText": "Commandes",
+  "SelectButton": "Sélectionner"
 }
