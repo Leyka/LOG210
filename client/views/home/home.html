@@ -4,12 +4,12 @@
     {{/contentFor}}
 
     {{#with user}}
-        <h1>{{_ "WelcomeTextTitle"}} {{userName}} !</h1>
+        <h1>{{_ "WelcomeTextTitle"}} {{profile.fullName}} !</h1>
         <ul>
             <li>{{_ "EmailAddressLabel"}} : {{emails.[0].address}}</li>
             <li>{{_ "FullNameLabel"}} : {{profile.fullName}}</li>
             <li>{{_ "BirthdayLabel"}} : {{profile.birthday}}</li>
-            <li>{{_ "AddressLabel"}} : {{profile.address}}</li>
+            <li>{{_ "AddressLabel"}} : {{profile.addresses}}</li>
             <li>{{_ "PhoneNumberLabel"}} : {{profile.phoneNumber}}</li>
         </ul>
         <p>{{_ "WelcomeText"}}</p>

@@ -9,8 +9,7 @@ Template.editAccount.events({
         var doc = AutoForm.getFormValues('editAccountForm').insertDoc;
         Meteor.call('editAccount', doc);
         alert('Modification éffectuées!\n' +
-            'Addresse: ' + doc.profile.address + '\n' +
+            'Addresse: ' + doc.profile.addresses + '\n' +
             'Numéro de téléphone: ' + doc.profile.phoneNumber);
     }
 });
-

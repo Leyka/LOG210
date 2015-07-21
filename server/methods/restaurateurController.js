@@ -9,7 +9,7 @@ Meteor.methods({
         },
         editRestaurateur: function (doc) {
             check(doc, Match.Any);
-            if (doc.password != "") {
+            if (doc.password != null && doc.password != "") {
                 Accounts.setPassword(doc._id, doc.password);
             }
             Meteor.users.update(
@@ -18,7 +18,7 @@ Meteor.methods({
                     $set: {
                         "profile.fullName": doc.profile.fullName,
                         "profile.birthday": doc.profile.birthday,
-                        "profile.address": doc.profile.address,
+                        "profile.address": doc.profile.addresses,
                         "profile.phoneNumber": doc.profile.phoneNumber
                     }
                 }

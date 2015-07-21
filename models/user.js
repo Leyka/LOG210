@@ -14,7 +14,15 @@ Schema.UserProfile = new SimpleSchema({
         }
     },
     address: {
+        type: String,
+        optional: true,
+        label: function () {
+            return TAPi18n.__("AddressLabel");
+        }
+    },
+    addresses: {
         type: [String],
+        minCount: 1,
         label: function () {
             return TAPi18n.__("AddressLabel");
         }

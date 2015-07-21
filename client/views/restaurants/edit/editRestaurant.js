@@ -17,9 +17,8 @@ Template.editRestaurant.events({
     },
     "submit #editRestaurantForm": function () {
         var doc = AutoForm.getFormValues('editRestaurantForm').updateDoc;
-        if (doc.$set.restaurateur == null) {
-            alert('Modification éffectuée!\n' +
-                'Aucun restaurateur choisit');
+        if (isNotEmpty(doc.name) && isNotEmpty(doc.address) && doc.restaurateur == null) {
+            alert(TAPi18n.__("NoRestaurateurAssigned"));
         }
     }
 });
