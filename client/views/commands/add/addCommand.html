@@ -71,8 +71,10 @@
 <template name="completeCommand">
     {{#contentFor region="title"}}
         {{_ "NewCommandTitle"}}
+        <div class="pull-right">Total : {{totalPrice}} $</div>
     {{/contentFor}}
     <div class="row well">
+        <h2></h2>
         {{#each selectedMeals}}
             <div class="col-sm-6">
                 {{_ "MealLabel"}} : {{ meal.name }}
@@ -94,6 +96,19 @@
     </select>
         <button type="button" class="btn btn-default" data-action=changeAddress>{{_ "ChangeAddressButton"}}</button>
         <br>
-        <button type="submit" class="btn btn-primary">{{_ "ConfirmCommand"}}</button>
+        <hr>
+        <label for="">Card number</label>
+        <input type="number" class="form-control" max="16" placeholder="4530 5555 5555 5555" name="cardNumber"/>
+        <label for="">Type</label>
+        <br/>
+        <select name="typeCard" id="">
+            <option value="visa">Visa</option>
+            <option value="mc">Mastercard</option>
+        </select>
+        <br/>
+        <label for="">CVC</label>
+        <input type="number" name="cvc" class="form-control" min="3" max="3" placeholder="123"/>
+        <hr/>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-paypal"></i> &nbsp; {{_ "PayPaypalCommand"}}</button>
     {{/autoForm}}
 </template>

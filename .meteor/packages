@@ -11,7 +11,7 @@ accounts-password
 aldeed:collection2
 iron:router
 raix:handlebar-helpers
-audit-argument-checks
+
 fastclick
 manuelschoebel:ms-seo
 fortawesome:fontawesome
@@ -24,5 +24,8 @@ alanning:roles
 tsega:bootstrap3-datetimepicker@=3.1.3_3
 aldeed:autoform-bs-datetimepicker
 email
-mrt:paypal
 dburles:google-maps
+
+
+npm-container
+mrt:paypal

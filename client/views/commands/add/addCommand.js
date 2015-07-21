@@ -38,10 +38,18 @@ Template.addCommandMenus.events({
         Router.go("completeCommand", {_id: restaurantId});
     }
 });
-
+var totalPrice = 0 ;
 Template.completeCommand.helpers({
     selectedMeals: function () {
         return Session.get("commandMeals");
+    },
+    totalPrice: function() {
+        var commandMeals =  Session.get("commandMeals");
+        commandMeals.forEach(function(meal){
+            totalPrice += meal.meal.price * meal.quantity;
+        });
+
+        return totalPrice;
     },
     clientId: function () {
         return Meteor.userId();
@@ -74,9 +82,39 @@ Template.completeCommand.events({
         doc.meals = Session.get("commandMeals");
         var mongoId = new Mongo.ObjectID();
         doc._id = mongoId._str;
-        alert(TAPi18n.__("ConfirmationNumberAlert") + doc._id);
-        Meteor.call("addCommand", doc);
-        Router.go("commands");
+
+
+        // Paypal
+        Meteor.Paypal.authorize({
+                name: doc.client,
+                number: '4214029581057430',
+                type: 'visa',
+                cvv2: '123',
+                expire_year: '2020',
+                expire_month: '07'
+            },
+            {
+                total: totalPrice,
+                currency: 'CAD'
+            },
+            function(error, results){
+                if(error){
+                    //Deal with Error
+                    console.log(error);
+                }
+
+                else{
+                    //results contains:
+                    //  saved (true or false)
+                    //  if false: "error" contains the reasons for failure
+                    //  if true: "payment" contains the transaction information
+
+                    Meteor.call("addCommand", doc);
+                    alert(TAPi18n.__("ConfirmationNumberAlert") + doc._id);
+                    Router.go("commands");
+                }
+            });
+
     },
     "click [data-action=changeAddress]": function () {
         var address = $("#addressSelection").find(":selected").text();

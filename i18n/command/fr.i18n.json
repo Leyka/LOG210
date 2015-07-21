@@ -14,5 +14,6 @@
   "ConfirmCommand": "Confirmer la commande",
   "ConfirmationNumberAlert": "Numéro de confirmation: ",
   "DateTimeLabel": "Date et heure",
-  "DeliveryAddressLabel": "Adresse de livraison"
+  "DeliveryAddressLabel": "Adresse de livraison",
+  "PayPaypalCommand": "Payer avec Paypal"
 }
