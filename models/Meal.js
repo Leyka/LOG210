@@ -9,6 +9,7 @@ Schemas.Meals = new SimpleSchema({
     },
     description: {
         type: String,
+        optional: true,
         label: function () {
             return TAPi18n.__("MealDescriptionLabel");
         }

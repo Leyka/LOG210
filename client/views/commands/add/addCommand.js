@@ -56,13 +56,13 @@ Template.completeCommand.helpers({
     },
     selectedAddress: function () {
         if (selectedAddress.get() == null) {
-            selectedAddress.set(Meteor.user().profile.address[0]);
+            selectedAddress.set(Meteor.user().profile.addresses[0]);
         }
         return selectedAddress.get();
 
     },
     clientAddresses: function () {
-        return Meteor.user().profile.address;
+        return Meteor.user().profile.addresses;
     }
 });
 var autocomplete = null;
@@ -79,6 +79,18 @@ Template.completeCommand.events({
         doc.deliveryAddress = form.deliveryAddress.value;
         doc.restaurant = form.restaurant.value;
         selectedAddress.set(doc.deliveryAddress);
+        var userAddresses = Meteor.user().profile.addresses;
+        var addressExists = false;
+        userAddresses.forEach(function (e) {
+            if (e == doc.deliveryAddress)
+                addressExists = true;
+        });
+
+        if (!addressExists) {
+            userAddresses.push(doc.deliveryAddress);
+            Meteor.call("updateUserAddress", userAddresses);
+        }
+
         doc.meals = Session.get("commandMeals");
         var mongoId = new Mongo.ObjectID();
         doc._id = mongoId._str;

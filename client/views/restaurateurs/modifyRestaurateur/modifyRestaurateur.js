@@ -1,54 +1,41 @@
-var autocomplete = null;
-Template.modifyRestaurateur.onRendered(function () {
-    autocomplete = AutocompleteInput('#address');
-});
+isNotEmpty = function (value) {
+    return !!(value && value !== '');
+
+};
+
+PofileNotEmpty = function (profile) {
+    return !!(isNotEmpty(profile.fullName) && isNotEmpty(profile.birthday) && isNotEmpty(profile.addresses[0]) && isNotEmpty(profile.phoneNumber));
+};
 
 Template.modifyRestaurateur.helpers({
     restaurants: function () {
         return Restaurants.find();
     },
-    birthday: function () {
-        var date = this.profile.birthday;
-        var day = date.getDate();
-        var month = date.getMonth() + 1;
-        var year = date.getFullYear();
-
-        if (day < 10) {
-            day = "0" + day;
-        }
-
-        if (month < 10) {
-            month = "0" + month;
-        }
-
-        return year + "-" + month + "-" + day;
-    },
     assignedRestaurant: function (restaurant) {
-        if (Restaurants.find({_id: restaurant, restaurateur: Template.parentData()._id}).count())
+        if (Restaurants.find({_id: restaurant, restaurateur: Template.parentData().restaurateur._id}).count())
             return "selected";
     }
 });
 
 Template.modifyRestaurateur.events({
-    "focus #address": function () {
-        Geolocalisation(autocomplete);
-    },
-    "submit #modifyRestaurateur": function (event) {
+    "submit #modifyRestaurateur": function () {
+        var doc = AutoForm.getFormValues('modifyRestaurateur').insertDoc;
+        if (!PofileNotEmpty(doc.profile))
+            return false;
         var restaurateur = {};
-        restaurateur._id = event.target._id.value;
-        restaurateur.email = event.target.email.value;
-        restaurateur.password = event.target.password.value;
+        restaurateur._id = this.doc._id;
+        restaurateur.email = doc.emails[0].address;
 
-        restaurateur.profile = {};
-        restaurateur.profile.fullName = event.target.fullName.value;
-        restaurateur.profile.birthday = event.target.birthday.value;
-        restaurateur.profile.address = event.target.address.value;
-        restaurateur.profile.phoneNumber = event.target.phoneNumber.value;
+        if (isNotEmpty(doc.services)) {
+            restaurateur.password = doc.services.password;
+        }
 
-        var restaurantId = event.target.restaurant.selectedOptions[0].id;
+        restaurateur.profile = doc.profile;
+
+        var restaurantId = $("#restaurant")[0].selectedOptions[0].id;
 
         if (restaurantId == "none") {
-            alert(TAPi18n.__("NoRestaurantAssignedText"))
+            alert(TAPi18n.__("NoRestaurantAssignedText"));
         }
         else {
             restaurateur.restaurant = restaurantId;

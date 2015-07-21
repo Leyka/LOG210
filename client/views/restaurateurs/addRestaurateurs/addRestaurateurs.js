@@ -1,7 +1,7 @@
-var autocomplete = null;
-Template.addRestaurateurs.onRendered(function () {
-    autocomplete = AutocompleteInput('#address');
-});
+//var autocomplete = null;
+//Template.addRestaurateurs.onRendered(function () {
+//    autocomplete = AutocompleteInput('[name=profile.address]');
+//});
 
 Template.addRestaurateurs.helpers({
     restaurants: function () {
@@ -10,21 +10,20 @@ Template.addRestaurateurs.helpers({
 });
 
 Template.addRestaurateurs.events({
-    "focus #address": function () {
-        Geolocalisation(autocomplete);
-    },
-    "submit #addRestaurateur": function (event) {
+    //"focus #address": function () {
+    //    Geolocalisation(autocomplete);
+    //},
+    "submit #addRestaurateur": function () {
+        var doc = AutoForm.getFormValues('addRestaurateur').insertDoc;
+        if (!PofileNotEmpty(doc.profile))
+            return false;
         var restaurateur = {};
-        restaurateur.email = event.target.email.value;
-        restaurateur.password = event.target.password.value;
+        restaurateur.email = doc.emails[0].address;
+        restaurateur.password = doc.services.password;
 
-        restaurateur.profile = {};
-        restaurateur.profile.fullName = event.target.fullName.value;
-        restaurateur.profile.birthday = event.target.birthday.value;
-        restaurateur.profile.address = event.target.address.value;
-        restaurateur.profile.phoneNumber = event.target.phoneNumber.value;
+        restaurateur.profile = doc.profile;
 
-        var restaurantId = event.target.restaurant.selectedOptions[0].id;
+        var restaurantId = $("#restaurant")[0].selectedOptions[0].id;
 
         if (restaurantId == "none") {
             alert(TAPi18n.__("NoRestaurantAssignedText"));
@@ -34,5 +33,6 @@ Template.addRestaurateurs.events({
         }
 
         Meteor.call("addRestaurateur", restaurateur);
+        alert("Restaurateur Ajouté");
     }
 });

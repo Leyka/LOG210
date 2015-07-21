@@ -17,9 +17,9 @@
                         <li><a href="/restaurateurs"><i class="fa fa-users"></i> {{_ "RestaurateursSideMenuText"}}</a>
                         </li>
                     {{/if}}
-                    {{#if isInRole 'client'}}
+                    {{#unless isInRole 'entrepreneur,restaurateur,deliveryman'}}
                         <li><a href="/commands"><i class="fa fa-users"></i> {{_ "CommandsSideMenuText"}}</a></li>
-                    {{/if}}
+                    {{/unless}}
                     {{#if isInRole 'deliveryman'}}
                         <li><a href="/deliverys"><i class="fa fa-paper-plane"></i> {{_ "DeliverysSideMenuText"}}</a>
                         </li>

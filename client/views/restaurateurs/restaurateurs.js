@@ -4,7 +4,7 @@ Template.restaurateurs.helpers({
     },
     restaurants: function () {
         var restaurant = Restaurants.findOne({restaurateur: this._id});
-        return restaurant.name;
+        return isNotEmpty(restaurant) ? restaurant.name : TAPi18n.__("NoRestaurantAssigned");
     },
     isEmpty: function () {
         return Meteor.users.find({"roles": "restaurateur"}).count() == 0;

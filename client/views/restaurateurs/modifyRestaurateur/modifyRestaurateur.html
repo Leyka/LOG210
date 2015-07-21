@@ -2,54 +2,38 @@
     {{#contentFor region="title"}}
         {{_ "ModifyRestaurateurTitle"}}
     {{/contentFor}}
-    {{#with restaurateur}}
-        <form id="modifyRestaurateur">
-            <input type="hidden" id="_id" value="{{_id}}">
-
-            <div class="form-group">
-                <label for="email">{{_ "EmailAddressLabel"}}</label>
-                <input class="form-control" type="email" id="email" placeholder="{{_ "EmailAddressLabel"}}" required
-                       value="{{emails.[0].address}}">
+    {{#autoForm schema="Schema.User" doc=restaurateur id="modifyRestaurateur" type="normal"}}
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                {{_ "ProfileHeading"}}
             </div>
-
-            <div class="form-group">
-                <label for="password">{{_ "PasswordLabel"}}</label>
-                <input class="form-control" type="password" id="password" placeholder="{{_ "PasswordLabel"}}">
+            <div class="panel-body">
+                {{> afQuickField name="emails.0.address" readOnly=true}}
+                {{> afQuickField name="profile.fullName" }}
+                {{> afQuickField name="profile.birthday" }}
+                {{> afQuickField name="profile.addresses"}}
+                {{> afQuickField name="profile.phoneNumber"}}
             </div>
-
-            <div class="form-group">
-                <label for="fullName">{{_ "FullNameLabel"}}</label>
-                <input class="form-control" type="text" id="fullName" placeholder="{{_ "FullNameLabel"}}" required
-                       value="{{profile.fullName}}">
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                {{_ "SecurityHeading"}}
             </div>
-
-            <div class="form-group">
-                <label for="birthday">{{_ "BirthdayLabel"}}</label>
-                <input class="form-control" type="date" id="birthday" required value="{{birthday}}">
+            <div class="panel-body">
+                {{> afQuickField name="services.password" type="password" value=""}}
             </div>
-
-            <div class="form-group">
-                <label for="address">{{_ "AddressLabel"}}</label>
-                <input class="form-control" type="text" id="address" placeholder="{{_ "AddressLabel"}}" required
-                       value="{{profile.address}}">
-            </div>
-
-            <div class="form-group">
-                <label for="phoneNumber">{{_ "PhoneNumberLabel"}}</label>
-                <input class="form-control" type="tel" id="phoneNumber" placeholder="{{_ "PhoneNumberLabel"}}" required
-                       value="{{profile.phoneNumber}}">
-            </div>
-
-            <div class="form-group">
-                <label for="restaurant">{{_ "RestaurantLabel"}}</label>
-                <select id="restaurant" class="form-control">
-                    <option id="none">{{_ "SelectARestaurantLabel"}}</option>
-                    {{#each restaurants}}
-                        <option id={{_id}} {{assignedRestaurant _id}}>{{name}}</option>
-                    {{/each}}
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">{{_ "SubmitButtonLabel"}}</button>
-        </form>
-    {{/with}}
+        </div>
+        <div class="form-group">
+            <label for="restaurant">{{_ "RestaurantLabel"}}</label>
+            <select id="restaurant" class="form-control">
+                <option id="none">{{_ "SelectARestaurantLabel"}}</option>
+                {{#each restaurants}}
+                    <option id={{_id}} {{assignedRestaurant _id}}>{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success col-sm-2" type="submit" data-action=addRestaurateur>{{_ "Submit"}}</button>
+        </div>
+    {{/autoForm}}
 </template>

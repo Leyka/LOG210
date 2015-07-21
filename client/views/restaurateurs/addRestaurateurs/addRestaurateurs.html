@@ -2,33 +2,27 @@
     {{#contentFor region="title"}}
         {{_ "AddRestaurateurTitle"}}
     {{/contentFor}}
-
-    <form id="addRestaurateur">
-        <div class="form-group">
-            <label for="email">{{_ "EmailAddressLabel"}}</label>
-            <input class="form-control" type="email" id="email" placeholder="{{_ "EmailAddressLabel"}}" required>
+    {{#autoForm schema="Schema.User" id="addRestaurateur" type="normal"}}
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                {{_ "ProfileHeading"}}
+            </div>
+            <div class="panel-body">
+                {{> afQuickField name="emails.0.address"}}
+                {{> afQuickField name="profile.fullName" }}
+                {{> afQuickField name="profile.birthday" }}
+                {{> afQuickField name="profile.addresses"}}
+                {{> afQuickField name="profile.phoneNumber"}}
+            </div>
         </div>
-        <div class="form-group">
-            <label for="password">{{_ "PasswordLabel"}}</label>
-            <input class="form-control" type="password" id="password" placeholder="{{_ "PasswordLabel"}}" required>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                {{_ "SecurityHeading"}}
+            </div>
+            <div class="panel-body">
+                {{> afQuickField name="services.password" type="password"}}
+            </div>
         </div>
-        <div class="form-group">
-            <label for="fullName">{{_ "FullNameLabel"}}</label>
-            <input class="form-control" type="text" id="fullName" placeholder="{{_ "FullNameLabel"}}" required>
-        </div>
-        <div class="form-group">
-            <label for="birthday">{{_ "BirthdayLabel"}}</label>
-            <input class="form-control" type="date" id="birthday" required>
-        </div>
-        <div class="form-group">
-            <label for="address">{{_ "AddressLabel"}}</label>
-            <input class="form-control" type="text" id="address" placeholder="{{_ "AddressLabel"}}" required>
-        </div>
-        <div class="form-group">
-            <label for="phoneNumber">{{_ "PhoneNumberLabel"}}</label>
-            <input class="form-control" type="tel" id="phoneNumber" placeholder="{{_ "PhoneNumberLabel"}}" required>
-        </div>
-
         <div class="form-group">
             <label for="restaurant">{{_ "RestaurantLabel"}}</label>
             <select id="restaurant" class="form-control">
@@ -38,6 +32,8 @@
                 {{/each}}
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">{{_ "SubmitButtonLabel"}}</button>
-    </form>
+        <div class="form-group">
+            <button class="btn btn-success col-sm-2" type="submit" data-action=addRestaurateur>{{_ "Submit"}}</button>
+        </div>
+    {{/autoForm}}
 </template>

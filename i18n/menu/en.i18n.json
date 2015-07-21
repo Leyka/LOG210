@@ -5,5 +5,6 @@
   "MenuDeletedMessage": "The menu has been deleted.",
   "EmptyMenuMessage": "There are no menus at this moment.",
   "ShowMenuTitle": "Show Menu",
-  "MenuButton": "Menu"
+  "MenuButton": "Menu",
+  "MenuTitle": "Menu"
 }

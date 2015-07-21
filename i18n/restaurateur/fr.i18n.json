@@ -9,5 +9,7 @@
   "RestaurantTableHeader": "Restaurant",
   "OptionsTableHeader": "Options",
   "EmptyRestaurateurMessage": "Il n'y a aucun restaurateurs pour le moment.",
-  "RestaurateurLabel": "Restaurateur"
+  "RestaurateurLabel": "Restaurateur",
+  "NoRestaurantAssigned": "Aucun",
+  "RestaurateurDeletedAlert": "Restaurateur Supprimé"
 }

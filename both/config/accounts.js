@@ -44,6 +44,17 @@ T9n.map('fr', {
     PhoneNumberLabel: "Numéro de téléphone"
 });
 
+var mySubmitFunc = function (password, userInfo) {
+    var address = [];
+    address[0] = userInfo.profile.address;
+    userInfo.profile.addresses = address;
+    userInfo.roles = ["client"];
+};
+
+AccountsTemplates.configure({
+    preSignUpHook: mySubmitFunc
+});
+
 AccountsTemplates.addFields([
     {
         _id: 'fullName',

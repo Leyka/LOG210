@@ -28,11 +28,11 @@ Router.route('/modifyRestaurateur/:_id', {
     },
     action: function () {
         var id = this.params._id;
+        var restaurateur = Meteor.users.findOne({_id: id});
         this.render('modifyRestaurateur', {
             data: {
-                restaurateur: function () {
-                    return Meteor.users.findOne({_id: id})
-                }
+                restaurateur: restaurateur
+
             }
         });
         SEO.set({title: "Modify Restaurateur"});
