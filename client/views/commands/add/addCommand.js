@@ -93,6 +93,7 @@ Template.completeCommand.events({
         }
 
         doc.meals = Session.get("commandMeals");
+        doc.total = totalPrice;
         var mongoId = new Mongo.ObjectID();
         doc._id = mongoId._str
 
@@ -119,7 +120,8 @@ Template.completeCommand.events({
                 if(error){
                     //Deal with Error
                     console.log(error);
-                    alert('Une erreur est survenue');
+                    alert(TAPi18n.__("MsgFailPaypal"));
+                    return false;
                 }
 
                 else{
@@ -128,7 +130,7 @@ Template.completeCommand.events({
                     //  if false: "error" contains the reasons for failure
                     //  if true: "payment" contains the transaction information
 
-                    alert("Paiement autorisé! \n" + "No. de confirmation : " + results.payment.id);
+                    alert(TAPi18n.__("MsgSuccessPaypal") + results.payment.id);
                     doc.paypalConfirmationNb = results.payment.id;
                     Meteor.call("addCommand", doc);
                     console.log(results);

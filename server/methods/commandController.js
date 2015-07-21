@@ -7,7 +7,9 @@ Meteor.methods({
                 dateTime: doc.dateTime,
                 deliveryAddress: doc.deliveryAddress,
                 meals: doc.meals,
-                restaurant: doc.restaurant
+                restaurant: doc.restaurant,
+                paypalConfirmationNb: doc.paypalConfirmationNb,
+                total: doc.total
             });
             var mealString = "";
             doc.meals.forEach(function (e) {

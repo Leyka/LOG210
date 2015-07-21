@@ -48,6 +48,9 @@ Commands.attachSchema(
         paypalConfirmationNb: {
             type: String,
             optional: true
+        },
+        total: {
+            type: Number
         }
     })
 );

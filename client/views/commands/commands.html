@@ -14,6 +14,7 @@
             <tr>
                 <th>{{_ "DateTimeLabel"}}</th>
                 <th>{{_ "DeliveryAddressLabel"}}</th>
+                <th>Total</th>
                 <th>{{_ "PaypalConfirmation"}}</th>
             </tr>
             </thead>
@@ -22,6 +23,7 @@
                 <tr>
                     <td>{{dateTime}}</td>
                     <td>{{deliveryAddress}}</td>
+                    <td>{{total}} $</td>
                     <td>{{paypalConfirmationNb}}</td>
                 </tr>
             {{/each}}

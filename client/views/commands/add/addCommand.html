@@ -97,7 +97,7 @@
         <button type="button" class="btn btn-default" data-action=changeAddress>{{_ "ChangeAddressButton"}}</button>
         <br>
         <hr>
-        <label for="">Card number</label>
+        <label for="">{{_ "LabelCardNumber"}}</label>
         <input type="number" class="form-control" minlength="16" maxlength="16" placeholder="4530 5555 5555 5555" name="cardNumber"/>
         <label for="">Type</label>
         <br/>
@@ -106,11 +106,14 @@
             <option value="mastercard">Mastercard</option>
         </select>
         <br/>
-        <label for="">Expire date month</label>
+        <label for="">{{_ "LabelExpireMonth"}}</label>
         <input type="number" name="expireMonth" class="form-control" minlength="2" maxlength="2" placeholder="02"/>
-        <label for="">Expire date year</label>
+        <label for="">{{_ "LabelExpireYear"}}</label>
         <input type="number" name="expireYear" class="form-control" minlength="4" maxlength="4" placeholder="2020"/>
+        <label for="">CVC</label>
+        <input type="number" class="form-control" minlength="3" maxlength="3" placeholder="123"/>
         <hr/>
         <button type="submit" class="btn btn-primary"><i class="fa fa-paypal"></i> &nbsp; {{_ "PayPaypalCommand"}}</button>
+        <hr/>
     {{/autoForm}}
 </template>

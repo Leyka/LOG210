@@ -15,5 +15,11 @@
   "ConfirmationNumberAlert": "Confirmation number: ",
   "DateTimeLabel": "Date and time",
   "DeliveryAddressLabel": "Delivery Address",
-  "PayPaypalCommand": "Pay with Paypal"
+  "PayPaypalCommand": "Pay with Paypal",
+  "PaypalConfirmation": "Paypal Confirmation no.",
+  "LabelCardNumber": "Card number",
+  "LabelExpireMonth": "Month expiration",
+  "LabelExpireYear": "Year expiration",
+  "MsgSuccessPaypal": "Payment authorized! \nConfirmation number : ",
+  "MsgFailPaypal": "Oops! Something went wrong... Check your credit card."
 }
