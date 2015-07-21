@@ -98,16 +98,18 @@
         <br>
         <hr>
         <label for="">Card number</label>
-        <input type="number" class="form-control" max="16" placeholder="4530 5555 5555 5555" name="cardNumber"/>
+        <input type="number" class="form-control" minlength="16" maxlength="16" placeholder="4530 5555 5555 5555" name="cardNumber"/>
         <label for="">Type</label>
         <br/>
         <select name="typeCard" id="">
             <option value="visa">Visa</option>
-            <option value="mc">Mastercard</option>
+            <option value="mastercard">Mastercard</option>
         </select>
         <br/>
-        <label for="">CVC</label>
-        <input type="number" name="cvc" class="form-control" min="3" max="3" placeholder="123"/>
+        <label for="">Expire date month</label>
+        <input type="number" name="expireMonth" class="form-control" minlength="2" maxlength="2" placeholder="02"/>
+        <label for="">Expire date year</label>
+        <input type="number" name="expireYear" class="form-control" minlength="4" maxlength="4" placeholder="2020"/>
         <hr/>
         <button type="submit" class="btn btn-primary"><i class="fa fa-paypal"></i> &nbsp; {{_ "PayPaypalCommand"}}</button>
     {{/autoForm}}

@@ -25,9 +25,6 @@ tsega:bootstrap3-datetimepicker@=3.1.3_3
 aldeed:autoform-bs-datetimepicker
 email
 dburles:google-maps
-<<<<<<< HEAD
-
-
 npm-container
 mrt:paypal
 accolver:twilio-meteor

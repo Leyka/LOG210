@@ -38,12 +38,13 @@ Template.addCommandMenus.events({
         Router.go("completeCommand", {_id: restaurantId});
     }
 });
-var totalPrice = 0 ;
+var totalPrice;
 Template.completeCommand.helpers({
     selectedMeals: function () {
         return Session.get("commandMeals");
     },
     totalPrice: function() {
+        totalPrice = 0;
         var commandMeals =  Session.get("commandMeals");
         commandMeals.forEach(function(meal){
             totalPrice += meal.meal.price * meal.quantity;
@@ -93,17 +94,22 @@ Template.completeCommand.events({
 
         doc.meals = Session.get("commandMeals");
         var mongoId = new Mongo.ObjectID();
-        doc._id = mongoId._str;
-
+        doc._id = mongoId._str
 
         // Paypal
+
+        var cardNumber = form.cardNumber.value;
+        var typeCard = form.typeCard.selectedOptions[0].value;
+        var expireMonth = form.expireMonth.value;
+        var expireYear = form.expireYear.value;
+
         Meteor.Paypal.authorize({
                 name: doc.client,
-                number: '4214029581057430',
-                type: 'visa',
+                number: cardNumber,
+                type: typeCard,
                 cvv2: '123',
-                expire_year: '2020',
-                expire_month: '07'
+                expire_year: expireYear,
+                expire_month: expireMonth
             },
             {
                 total: totalPrice,
@@ -113,6 +119,7 @@ Template.completeCommand.events({
                 if(error){
                     //Deal with Error
                     console.log(error);
+                    alert('Une erreur est survenue');
                 }
 
                 else{
@@ -122,7 +129,9 @@ Template.completeCommand.events({
                     //  if true: "payment" contains the transaction information
 
                     Meteor.call("addCommand", doc);
-                    alert(TAPi18n.__("ConfirmationNumberAlert") + doc._id);
+                    //alert(TAPi18n.__("ConfirmationNumberAlert") + doc._id);
+                    alert("Paiement autorisé! \n" + "No. de confirmation : " + results.payment.id);
+                    console.log(results);
                     Router.go("commands");
                 }
             });
