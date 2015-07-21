@@ -128,9 +128,9 @@ Template.completeCommand.events({
                     //  if false: "error" contains the reasons for failure
                     //  if true: "payment" contains the transaction information
 
-                    Meteor.call("addCommand", doc);
-                    //alert(TAPi18n.__("ConfirmationNumberAlert") + doc._id);
                     alert("Paiement autorisé! \n" + "No. de confirmation : " + results.payment.id);
+                    doc.paypalConfirmationNb = results.payment.id;
+                    Meteor.call("addCommand", doc);
                     console.log(results);
                     Router.go("commands");
                 }

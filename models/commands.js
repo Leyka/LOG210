@@ -44,6 +44,10 @@ Commands.attachSchema(
         },
         restaurant: {
             type: String
+        },
+        paypalConfirmationNb: {
+            type: String,
+            optional: true
         }
     })
 );
