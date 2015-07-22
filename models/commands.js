@@ -51,6 +51,13 @@ Commands.attachSchema(
         },
         total: {
             type: Number
+        },
+        commandStatus: {
+            type: [String],
+            allowedValues:["Not ready", "In preparation", "Ready"],
+            defaultValue:"Not ready",
+            minCount: 1,
+            maxCount: 1
         }
     })
 );

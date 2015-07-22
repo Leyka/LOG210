@@ -25,9 +25,22 @@
                     <td>{{deliveryAddress}}</td>
                     <td>{{total}} $</td>
                     <td>{{paypalConfirmationNb}}</td>
+                    {{#if isInRole 'restaurateur'}}
+                    <td>{{commandStatus}}</td>
+                        {{#if $eq this.commandStatus "Not ready"}}
+                            <a class="btn btn-success"><i class="prepare"></i> {{_ "PrepareCommandLabel"}}</a>
+
+                        {{else}}
+                            <a class="btn btn-success"><i class="ready"></i> {{_ "ReadyCommand"}}</a>
+                            <a class="btn btn-success"><i class="cancel"></i> {{_ "Cancel"}}</a>
+                        {{/if}}
+                    {{/if}}
                 </tr>
             {{/each}}
             </tbody>
         </table>
+    {{/if}}
+    {{#if isInRole 'restaurateur'}}
+        {{> commandsRestaurant}}
     {{/if}}
 </template>
