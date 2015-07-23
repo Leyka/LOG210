@@ -6,5 +6,6 @@
   "NewMealTitle": "Ajouter un plat",
   "MealDeletedMessage": "Le plat a été supprimé.",
   "EmptyMealMessage": "Il n'y a aucun plat pour le moment.",
-  "ShowMealTitle": "Afficher plat"
+  "ShowMealTitle": "Afficher plat",
+  "MealNoDescriptionAlert": "Il y a un plat sans description"
 }

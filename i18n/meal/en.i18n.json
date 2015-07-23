@@ -6,5 +6,6 @@
   "NewMealTitle": "Add new meal",
   "MealDeletedMessage": "The meal has been deleted.",
   "EmptyMealMessage": "There are no meals at this moment.",
-  "ShowMealTitle": "Show Meal"
+  "ShowMealTitle": "Show Meal",
+  "MealNoDescriptionAlert": "There's a meal without a description"
 }

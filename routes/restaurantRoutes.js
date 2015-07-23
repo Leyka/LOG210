@@ -48,16 +48,20 @@ Router.route('/restaurants/:_id', {
     },
     action: function () {
         var id = this.params._id;
+        var restaurateurId = Restaurants.findOne({_id: id}).restaurateur;
+        var restaurateurName = null;
+        if (restaurateurId != null) {
+            var restaurateur = Meteor.users.findOne({_id: restaurateurId});
+            restaurateurName = restaurateur.profile.fullName;
+        } else {
+            restaurateurName = TAPi18n.__("NoRestaurateurAssigned");
+        }
         this.render('showRestaurant', {
             data: {
                 restaurant: function () {
                     return Restaurants.findOne({_id: id})
                 },
-                restaurateurName: function() {
-                    var restaurateurId = Restaurants.findOne({_id: id}).restaurateur;
-                    var restaurateur = Meteor.users.findOne({_id: restaurateurId});
-                    return restaurateur.profile.fullName;
-                }
+                restaurateurName: restaurateurName
             }
         });
         SEO.set({title: TAPi18n.__("ShowRestaurantTitle")});

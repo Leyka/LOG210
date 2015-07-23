@@ -3,8 +3,12 @@ Template.restaurants.helpers({
         return Restaurants.find();
     },
     restaurateurName: function () {
-        var restaurateur = Meteor.users.findOne({_id: this.restaurateur});
-        return restaurateur.profile.fullName;
+        if (this.restaurateur != null) {
+            var restaurateur = Meteor.users.findOne({_id: this.restaurateur});
+            return restaurateur.profile.fullName;
+        } else {
+            return TAPi18n.__("NoRestaurateurAssigned");
+        }
     },
     isEmpty: function () {
         return Restaurants.find().count() == 0;
