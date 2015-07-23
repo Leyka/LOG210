@@ -20,6 +20,7 @@
   "LabelCardNumber": "Card number",
   "LabelExpireMonth": "Month expiration",
   "LabelExpireYear": "Year expiration",
+  "MsgConfirmationNo": "Your command has been sent. Confirmation number: ",
   "MsgSuccessPaypal": "Payment authorized! \nConfirmation number : ",
   "MsgFailPaypal": "Oops! Something went wrong... Check your credit card.",
   "StatusReady": "Ready",

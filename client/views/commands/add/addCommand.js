@@ -129,7 +129,7 @@ Template.completeCommand.events({
                     //  saved (true or false)
                     //  if false: "error" contains the reasons for failure
                     //  if true: "payment" contains the transaction information
-
+                    alert(TAPi18n.__("MsgConfirmationNo") + doc._id);
                     alert(TAPi18n.__("MsgSuccessPaypal") + results.payment.id);
                     doc.paypalConfirmationNb = results.payment.id;
                     Meteor.call("addCommand", doc);
