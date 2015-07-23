@@ -52,12 +52,10 @@ Commands.attachSchema(
         total: {
             type: Number
         },
-        commandStatus: {
-            type: [String],
+        status: {
+            type: String,
             allowedValues:["Not ready", "In preparation", "Ready"],
-            defaultValue:"Not ready",
-            minCount: 1,
-            maxCount: 1
+            defaultValue:"Not ready"
         }
     })
 );

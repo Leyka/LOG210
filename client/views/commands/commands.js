@@ -9,13 +9,13 @@ Template.commands.helpers({
 
 Template.commands.events({
     "click .prepare": function () {
-        (this._id).commandStatus.allowedValues[1];
+        (this._id).status.allowedValues[1];
 
         },
     "click .cancel": function () {
-        (this._id).commandStatus.allowedValues[0];
+        (this._id).status.allowedValues[0];
     },
     "click .ready": function () {
-        (this._id).commandStatus.allowedValues[2];
+        (this._id).status.allowedValues[2];
     }
 });

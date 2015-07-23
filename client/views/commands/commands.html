@@ -26,7 +26,7 @@
                     <td>{{total}} $</td>
                     <td>{{paypalConfirmationNb}}</td>
                     {{#if isInRole 'restaurateur'}}
-                    <td>{{commandStatus}}</td>
+                    <td>{{status}}</td>
                         {{#if $eq this.commandStatus "Not ready"}}
                             <a class="btn btn-success"><i class="prepare"></i> {{_ "PrepareCommandLabel"}}</a>
 
@@ -39,8 +39,5 @@
             {{/each}}
             </tbody>
         </table>
-    {{/if}}
-    {{#if isInRole 'restaurateur'}}
-        {{> commandsRestaurant}}
     {{/if}}
 </template>
