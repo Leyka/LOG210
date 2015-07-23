@@ -18,7 +18,7 @@ Meteor.methods({
                     $set: {
                         "profile.fullName": doc.profile.fullName,
                         "profile.birthday": doc.profile.birthday,
-                        "profile.address": doc.profile.addresses,
+                        "profile.addresses": doc.profile.addresses,
                         "profile.phoneNumber": doc.profile.phoneNumber
                     }
                 }
