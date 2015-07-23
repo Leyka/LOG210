@@ -21,5 +21,8 @@
   "LabelExpireMonth": "Month expiration",
   "LabelExpireYear": "Year expiration",
   "MsgSuccessPaypal": "Payment authorized! \nConfirmation number : ",
-  "MsgFailPaypal": "Oops! Something went wrong... Check your credit card."
+  "MsgFailPaypal": "Oops! Something went wrong... Check your credit card.",
+  "StatusReady": "Ready",
+  "StatusNotReady": "Not ready",
+  "StatusInProcess": "In process"
 }

@@ -21,5 +21,8 @@
   "LabelExpireMonth": "Expiration mois",
   "LabelExpireYear": "Expiration année",
   "MsgSuccessPaypal": "Paiement autorisé! \nNo. de confirmation : ",
-  "MsgFailPaypal": "Oops! Une erreur est surevenue... Vérifiez votre carte de crédit"
+  "MsgFailPaypal": "Oops! Une erreur est surevenue... Vérifiez votre carte de crédit",
+  "StatusReady": "Prête",
+  "StatusNotReady": "En attente",
+  "StatusInProcess": "En traitement"
 }
