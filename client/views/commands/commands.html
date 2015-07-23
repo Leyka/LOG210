@@ -1,9 +1,11 @@
 <template name="commands">
     {{#contentFor region="title"}}
         {{_ "CommandsTitle"}}
-        <div class="pull-right">
-            <a class="btn btn-success" href="/commands/add"><i class="fa fa-plus"></i> {{_ "PassCommandLabel"}}</a>
-        </div>
+        {{#if isInRole 'client'}}
+            <div class="pull-right">
+                <a class="btn btn-success" href="/commands/add"><i class="fa fa-plus"></i> {{_ "PassCommandLabel"}}</a>
+            </div>
+        {{/if}}
     {{/contentFor}}
 
     {{#if isEmpty}}
