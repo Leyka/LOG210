@@ -8,8 +8,8 @@ Template.commands.helpers({
 
         // Chercher les commandes du restaurant
         var restaurateurId = Meteor.userId();
-        var restaurant = Restaurants.find({restaurateur: restaurateurId});
-        var commands = Commands.find({restaurant: restaurant._id});
+        var restaurantId = Restaurants.find({restaurateur: restaurateurId}).fetch()._id;
+        var commands = Commands.find({restaurant: restaurantId}).fetch();
         return commands; 
 
     },
