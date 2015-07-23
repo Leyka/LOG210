@@ -8,6 +8,11 @@ Meteor.publish("restaurants", function () {
     return Restaurants.find();
 });
 
+Meteor.publish("restaurantsRestaurateur", function (userId) {
+    check(userId, Match.Any);
+    return Restaurants.find({restaurateur: userId});
+});
+
 Meteor.publish("restaurant", function (id) {
     check(id, Match.Any);
     return Restaurants.find({"_id": id});

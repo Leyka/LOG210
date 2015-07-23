@@ -3,7 +3,10 @@ Router.route('/restaurants', {
 
     name: 'restaurants',
     waitOn: function () {
-        return [Meteor.subscribe("restaurateurs"), Meteor.subscribe("restaurants")];
+        if (Roles.userIsInRole(Meteor.user(), "restaurateur"))
+            return [Meteor.subscribe("restaurateurs"), Meteor.subscribe("restaurantsRestaurateur", Meteor.userId())];
+        else if (Roles.userIsInRole(Meteor.user(), "entrepreneur"))
+            return [Meteor.subscribe("restaurateurs"), Meteor.subscribe("restaurants")];
     },
     action: function () {
         this.render('restaurants'); // Template name
