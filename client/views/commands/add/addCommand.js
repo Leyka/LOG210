@@ -95,7 +95,7 @@ Template.completeCommand.events({
         doc.meals = Session.get("commandMeals");
         doc.total = totalPrice;
         var mongoId = new Mongo.ObjectID();
-        doc._id = mongoId._str
+        doc._id = mongoId._str;
 
         // Paypal
 

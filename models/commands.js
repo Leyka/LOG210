@@ -50,7 +50,8 @@ Commands.attachSchema(
             optional: true
         },
         total: {
-            type: Number
+            type: Number,
+            decimal: true
         },
         status: {
             type: String,
