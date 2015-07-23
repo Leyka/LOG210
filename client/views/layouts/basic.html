@@ -18,7 +18,7 @@
                         </li>
                     {{/if}}
                     {{#unless isInRole 'entrepreneur,restaurateur,deliveryman'}}
-                        <li><a href="/commands"><i class="fa fa-users"></i> {{_ "CommandsSideMenuText"}}</a></li>
+                        <li><a href="/commands"><i class="fa fa-shopping-cart"></i> {{_ "CommandsSideMenuText"}}</a></li>
                     {{/unless}}
                     {{#if isInRole 'deliveryman'}}
                         <li><a href="/deliverys"><i class="fa fa-paper-plane"></i> {{_ "DeliverysSideMenuText"}}</a>

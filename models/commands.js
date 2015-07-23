@@ -54,8 +54,8 @@ Commands.attachSchema(
         },
         status: {
             type: String,
-            allowedValues:["Not ready", "In preparation", "Ready"],
-            defaultValue:"Not ready"
+            allowedValues:["Ready", "Not Ready", "In Process"],
+            defaultValue: "Not Ready"
         }
     })
 );
