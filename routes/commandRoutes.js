@@ -2,7 +2,10 @@
 Router.route('/commands', {
     name: 'commands',
     waitOn: function () {
-        return Meteor.subscribe("clientCommands", Meteor.userId());
+        if (Roles.userIsInRole(Meteor.user(), "restaurateur"))
+            return Meteor.subscribe("restaurateurCommands", Meteor.userId());
+        else
+            return Meteor.subscribe("clientCommands", Meteor.userId());
     },
     action: function () {
         this.render('commands'); // Template name
