@@ -22,6 +22,15 @@ Meteor.methods({
                 text: "Date: " + doc.dateTime + "\nAdresse: " + doc.deliveryAddress + "\n" + mealString
             });
             return id;
+        },
+        changeCommandStatus: function (command) {
+            check(command, Match.Any);
+            Commands.update({_id: command._id},
+                {
+                    $set: {
+                        status: command.status
+                    }
+                })
         }
     }
 );

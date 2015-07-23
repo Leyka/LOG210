@@ -16,9 +16,12 @@
             <tr>
                 <th>{{_ "DateTimeLabel"}}</th>
                 <th>{{_ "DeliveryAddressLabel"}}</th>
-                <th>Total</th>
+                <th>{{_ "TotalHeader"}}</th>
                 <th>{{_ "PaypalConfirmation"}}</th>
-                <th>Status</th>
+                <th>{{_ "StatusHeader"}}</th>
+                {{#if isInRole "restaurateur"}}
+                    <th>{{_ "OptionsHeader"}}</th>
+                {{/if}}
             </tr>
             </thead>
             <tbody>
@@ -29,6 +32,19 @@
                     <td>{{total}} $</td>
                     <td>{{paypalConfirmationNb}}</td>
                     <td>{{status}}</td>
+                    {{#if isInRole "restaurateur"}}
+                        {{#if $eq status "Not Ready"}}
+                            <button class="btn btn-default"
+                                    data-action=PrepareCommand>{{_ "PrepareCommandButton"}}</button>
+                        {{/if}}
+                        {{#if $eq status "In Process"}}
+                            <button class="btn btn-success"
+                                    data-action=FinishCommand>{{_ "FinishCommandButton"}}</button>
+                        {{/if}}
+                        {{#if $eq status "Ready"}}
+                            {{_ "NoActionsRequired"}}
+                        {{/if}}
+                    {{/if}}
                 </tr>
             {{/each}}
             </tbody>

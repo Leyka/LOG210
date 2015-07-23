@@ -24,5 +24,11 @@
   "MsgFailPaypal": "Oops! Something went wrong... Check your credit card.",
   "StatusReady": "Ready",
   "StatusNotReady": "Not ready",
-  "StatusInProcess": "In process"
+  "StatusInProcess": "In process",
+  "TotalHeader": "Total",
+  "StatusHeader": "Status",
+  "OptionsHeader": "Options",
+  "PrepareCommandButton": "Prepare Command",
+  "FinishCommandButton": "Finish Command",
+  "NoActionsRequired": "No actions required"
 }

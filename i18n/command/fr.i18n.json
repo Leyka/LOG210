@@ -24,5 +24,11 @@
   "MsgFailPaypal": "Oops! Une erreur est surevenue... Vérifiez votre carte de crédit",
   "StatusReady": "Prête",
   "StatusNotReady": "En attente",
-  "StatusInProcess": "En traitement"
+  "StatusInProcess": "En traitement",
+  "TotalHeader": "Total",
+  "StatusHeader": "Status",
+  "OptionsHeader": "Options",
+  "PrepareCommandButton": "Préparer la commande",
+  "FinishCommandButton": "Terminer la préparation",
+  "NoActionsRequired": "Aucune action requise"
 }

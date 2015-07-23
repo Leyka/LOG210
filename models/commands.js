@@ -55,7 +55,7 @@ Commands.attachSchema(
         },
         status: {
             type: String,
-            allowedValues:["Ready", "Not Ready", "In Process"],
+            allowedValues: ["Ready", "Not Ready", "In Process", "Accepted"],
             defaultValue: "Not Ready"
         }
     })

@@ -7,7 +7,7 @@ Meteor.methods({
             }
             Meteor.users.update({_id: userId}, {
                 $set: {
-                    "profile.addresses": doc.profile.address,
+                    "profile.addresses": doc.profile.addresses,
                     "profile.phoneNumber": doc.profile.phoneNumber
                 }
             });

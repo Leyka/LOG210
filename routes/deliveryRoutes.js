@@ -12,7 +12,7 @@ Router.route('/deliverys', {
 Router.route('/deliveryReadyCommandList', {
     name: 'deliveryReadyCommandList',
     waitOn: function () {
-        return [Meteor.subscribe("commands"), Meteor.subscribe("restaurants"), Meteor.subscribe("deliveries")];
+        return [Meteor.subscribe("readyCommands"), Meteor.subscribe("restaurants"), Meteor.subscribe("deliveries")];
     },
     action: function () {
         this.render('deliveryReadyCommandList'); // Template name

@@ -8,14 +8,12 @@ Template.commands.helpers({
 });
 
 Template.commands.events({
-    "click .prepare": function () {
-        (this._id).status.allowedValues[1];
-
+    "click [data-action=PrepareCommand]": function () {
+        this.status = "In Process";
+        Meteor.call("changeCommandStatus", this);
     },
-    "click .cancel": function () {
-        (this._id).status.allowedValues[0];
-    },
-    "click .ready": function () {
-        (this._id).status.allowedValues[2];
+    "click [data-action=FinishCommand]": function () {
+        this.status = "Ready";
+        Meteor.call("changeCommandStatus", this);
     }
 });

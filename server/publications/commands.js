@@ -12,3 +12,7 @@ Meteor.publish("restaurateurCommands", function (userId) {
     var restaurant = Restaurants.findOne({restaurateur: userId});
     return Commands.find({restaurant: restaurant._id});
 });
+
+Meteor.publish("readyCommands", function () {
+    return Commands.find({status: "Ready"});
+});
