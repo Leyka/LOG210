@@ -8,5 +8,6 @@
   "EmptyRestaurantMessage": "There is no restaurants at this moment.",
   "ShowRestaurantTitle": "Show restaurant",
   "EditRestaurant": "Edit Restaurant",
-  "NoRestaurateurAssigned": "No Restaurateur assigned"
+  "NoRestaurateurAssigned": "No Restaurateur assigned",
+  "EditRestaurantTitle": "Edit Restaurant"
 }

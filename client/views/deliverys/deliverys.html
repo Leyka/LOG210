@@ -2,7 +2,28 @@
     {{#contentFor region="title"}}
         {{_ "DeliverysTitle"}}
     {{/contentFor}}
-
+    {{#if isEmpty}}
+        <p class="alert alert-info">{{_ "EmptyDeliveryMessage"}}</p>
+    {{else}}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{_ "DateTimeLabel"}}</th>
+                <th>{{_ "DeliveryAddressLabel"}}</th>
+                <th>{{_ "TotalHeader"}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each deliveries}}
+                <tr>
+                    <td>{{createdAt}}</td>
+                    <td>{{deliveryAddress}}</td>
+                    <td>{{total}} $</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
     <form id="newDelivery">
         <div class="form-group">
             <label for="emplacement">{{_ "LocationLabel"}}</label>

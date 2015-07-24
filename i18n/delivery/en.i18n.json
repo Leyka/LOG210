@@ -8,5 +8,6 @@
   "LocationLabel": "Location",
   "StartButton": "Start",
   "EnterLocationPlaceholder": "Enter your current location",
-  "CommandConfirmedAlert": "Command Confirmed."
+  "CommandConfirmedAlert": "Command Confirmed.",
+  "EmptyDeliveryMessage": "There are no accepted deliveries at this moment."
 }

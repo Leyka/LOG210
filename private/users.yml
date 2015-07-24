@@ -15,7 +15,7 @@ user_client:
     fullName: Clie Ent
     addresses: [1234 rue DuClient]
     birthday: 1
-    phoneNumber: 555 555-5555
+    phoneNumber: 4388624789
 user_restaurateur:
   email: restaurateur@site.com
   password: password

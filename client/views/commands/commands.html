@@ -34,7 +34,7 @@
                     <td>{{status}}</td>
                     {{#if isInRole "restaurateur"}}
                         {{#if $eq status "Not Ready"}}
-                            <button class="btn btn-default"
+                            <button class="btn btn-warning"
                                     data-action=PrepareCommand>{{_ "PrepareCommandButton"}}</button>
                         {{/if}}
                         {{#if $eq status "In Process"}}

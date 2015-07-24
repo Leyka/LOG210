@@ -8,5 +8,6 @@
   "LocationLabel": "Location",
   "StartButton": "Commencer",
   "EnterLocationPlaceholder": "Entrez votre emplacement présent",
-  "CommandConfirmedAlert": "Commande confirmée."
+  "CommandConfirmedAlert": "Commande confirmée.",
+  "EmptyDeliveryMessage": "Il n'y a aucune livraisons acceptées pour l'instant."
 }

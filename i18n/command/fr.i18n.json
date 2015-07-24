@@ -31,5 +31,6 @@
   "OptionsHeader": "Options",
   "PrepareCommandButton": "Préparer la commande",
   "FinishCommandButton": "Terminer la préparation",
-  "NoActionsRequired": "Aucune action requise"
+  "NoActionsRequired": "Aucune action requise",
+  "DeliveryAlreadyAcceptedAlert": "Commande déja acceptée."
 }

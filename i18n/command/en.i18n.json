@@ -31,5 +31,6 @@
   "OptionsHeader": "Options",
   "PrepareCommandButton": "Prepare Command",
   "FinishCommandButton": "Finish Command",
-  "NoActionsRequired": "No actions required"
+  "NoActionsRequired": "No actions required",
+  "DeliveryAlreadyAcceptedAlert": "Command already accepted."
 }

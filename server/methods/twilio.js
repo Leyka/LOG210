@@ -13,7 +13,6 @@ Meteor.methods({
                     console.log(responseData.body);
                 }
             });
-            return id;
         }
     }
 );

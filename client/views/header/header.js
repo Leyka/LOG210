@@ -9,7 +9,8 @@ Template.header.helpers({
         return GetUserLanguage() == "en" ? "English" : "Français";
     },
     userName: function () {
-        return Meteor.user().profile.fullName;
+        if (isNotEmpty(Meteor.user()) && isNotEmpty(Meteor.user().profile && isNotEmpty(Meteor.user().profile.fullName)))
+            return Meteor.user().profile.fullName;
     }
 });
 

@@ -1,7 +1,7 @@
 Router.route('/deliverys', {
     name: 'deliverys',
     waitOn: function () {
-        return [Meteor.subscribe("restaurateurs"), Meteor.subscribe("restaurants")];
+        return [Meteor.subscribe("readyCommands"), Meteor.subscribe("deliverymanDeliveries", Meteor.userId())];
     },
     action: function () {
         this.render('deliverys'); // Template name
@@ -12,7 +12,7 @@ Router.route('/deliverys', {
 Router.route('/deliveryReadyCommandList', {
     name: 'deliveryReadyCommandList',
     waitOn: function () {
-        return [Meteor.subscribe("readyCommands"), Meteor.subscribe("restaurants"), Meteor.subscribe("deliveries")];
+        return [Meteor.subscribe("readyCommands"), Meteor.subscribe("restaurants"), Meteor.subscribe("deliveries"), Meteor.subscribe("clients")];
     },
     action: function () {
         this.render('deliveryReadyCommandList'); // Template name

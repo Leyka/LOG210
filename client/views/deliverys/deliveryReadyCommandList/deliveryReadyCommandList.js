@@ -27,7 +27,16 @@ Template.deliveryReadyCommandList.events({
         renderedTemplate.set(Blaze.renderWithData(Template.deliveryCommandMap, data, parentNode));
     },
     "click [data-action=AcceptCommand]": function () {
-        Deliveries.insert({deliveryman: Meteor.userId(), command: selectedCommand.get()});
-        alert(TAPi18n.__("CommandConfirmedAlert"));
+        var deliveryExist = Deliveries.find({command: selectedCommand.get()}).count();
+        if (deliveryExist != 0) {
+            alert(TAPi18n.__("DeliveryAlreadyAcceptedAlert"));
+        } else {
+            Deliveries.insert({deliveryman: Meteor.userId(), command: selectedCommand.get()});
+            alert(TAPi18n.__("CommandConfirmedAlert"));
+            var commande = Commands.findOne({_id: selectedCommand.get()});
+            var client = Meteor.users.findOne({_id: commande.client});
+            Meteor.call("sendSMS", client.profile.phoneNumber, "Votre commande est en cours de livraison et devrais arrivée d'ici peux");
+            Router.go("deliverys");
+        }
     }
 });

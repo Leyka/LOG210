@@ -16,7 +16,7 @@ Template.editRestaurant.events({
         Geolocalisation(autocomplete);
     },
     "submit #editRestaurantForm": function () {
-        var doc = AutoForm.getFormValues('editRestaurantForm').updateDoc;
+        var doc = AutoForm.getFormValues('editRestaurantForm').insertDoc;
         if (isNotEmpty(doc.name) && isNotEmpty(doc.address) && doc.restaurateur == null) {
             alert(TAPi18n.__("NoRestaurateurAssigned"));
         }

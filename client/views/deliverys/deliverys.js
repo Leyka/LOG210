@@ -23,7 +23,20 @@ Geolocalisation = function (input) {
     }
 };
 
-Template.deliverys.helpers({});
+Template.deliverys.helpers({
+    deliveries: function () {
+        return Deliveries.find();
+    },
+    deliveryAddress: function () {
+        return Commands.findOne({_id: this.command}).deliveryAddress;
+    },
+    total: function () {
+        return Commands.findOne({_id: this.command}).total
+    },
+    isEmpty: function () {
+        return Deliveries.find().count() == 0;
+    }
+});
 
 AdresseLivreur = new ReactiveVar();
 Template.deliverys.events({

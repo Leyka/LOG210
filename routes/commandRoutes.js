@@ -3,7 +3,7 @@ Router.route('/commands', {
     name: 'commands',
     waitOn: function () {
         if (Roles.userIsInRole(Meteor.user(), "restaurateur"))
-            return Meteor.subscribe("restaurateurCommands", Meteor.userId());
+            return [Meteor.subscribe("restaurateurCommands", Meteor.userId()), Meteor.subscribe("clients")];
         else
             return Meteor.subscribe("clientCommands", Meteor.userId());
     },

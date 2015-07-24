@@ -23,3 +23,11 @@ Meteor.methods({
         }
     }
 );
+
+Accounts.onCreateUser(function (options, user) {
+    if (options.roles[0] == "client")
+        Roles.addUsersToRoles(user._id, options.roles);
+    user.profile = options.profile;
+    user.roles = options.roles;
+    return user;
+});
